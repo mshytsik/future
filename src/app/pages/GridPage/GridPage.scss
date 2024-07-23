@@ -1,0 +1,10 @@
+@import '../../assets/css/utils/index.scss';
+
+.page-grid {
+    .articles-grid {
+        @include is-screen-max($breakpoint-md) {
+            padding-bottom: 75px;
+        }
+    }
+}
+

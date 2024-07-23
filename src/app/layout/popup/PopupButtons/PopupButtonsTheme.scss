@@ -1,0 +1,21 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .popup-buttons {
+        .popup {
+            &__body {
+                .button {
+                    &:not(:hover) {
+                        background-color: rgba(255, 255, 255, 0.06);
+
+                        .button {
+                            &__title {
+                                color: #e2e2e3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

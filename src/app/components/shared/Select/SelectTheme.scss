@@ -1,0 +1,28 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .select {
+        &__body {
+            border-color: #303234;
+            background-color: #101112;
+        }
+
+        &__item {
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(255, 255, 255, 0.06);
+                }
+            }
+
+            p {
+                color: #e2e2e3;
+            }
+
+            svg {
+                path {
+                    fill: #e2e2e3;
+                }
+            }
+        }
+    }
+}

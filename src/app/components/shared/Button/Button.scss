@@ -1,0 +1,197 @@
+@import '../../../assets/css/utils/index.scss';
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    border-radius: 40px;
+    transition:
+        background-color 0.3s,
+        border-color 0.3s,
+        opacity 0.3s;
+    user-select: none;
+    cursor: pointer;
+
+    * {
+        pointer-events: none;
+    }
+
+    & > img,
+    & > svg {
+        flex-shrink: 0;
+        width: 24px;
+    }
+
+    &__title {
+        min-width: 0;
+        padding: 0 6px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: color 0.3s;
+    }
+
+    &.is-disabled {
+        opacity: 0.4;
+    }
+
+    &--primary {
+        padding: 11px 15px;
+        border: 1px solid #232628;
+        background-color: #232628;
+
+        .button {
+            &__title {
+                color: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                background-color: #3f444a;
+                border-color: #3f444a;
+            }
+        }
+    }
+
+    &--secondary {
+        padding: 11px 15px;
+        border: 1px solid #e2e2e3;
+
+        .button {
+            &__title {
+                color: #1b1c1d;
+            }
+        }
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                background-color: rgba(27, 28, 29, 0.1);
+            }
+        }
+    }
+
+    &--square {
+        border-radius: 12px;
+        border-color: transparent;
+    }
+
+    &--md {
+        padding: 7px 11px;
+
+        .button {
+            &__title {
+                padding: 2px 4px;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &--sm {
+        padding: 3px 7px;
+
+        .button {
+            &__title {
+                padding: 2px 4px;
+                font-size: 13px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    &--fw {
+        width: 100%;
+    }
+
+    &--icon {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        padding: 0;
+        border-radius: 50%;
+        transition:
+            border-radius 0.3s,
+            background-color 0.3s;
+
+        & > img,
+        & > svg {
+            width: 28px;
+        }
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                border-radius: 12px;
+                background-color: rgba(27, 28, 29, 0.1);
+            }
+        }
+
+        &-lg {
+            width: 48px;
+            height: 48px;
+
+            & > img,
+            & > svg {
+                width: 24px;
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &-md {
+            width: 40px;
+            height: 40px;
+
+            & > img,
+            & > svg {
+                width: 24px;
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &-sm {
+            width: 36px;
+            height: 36px;
+
+            & > img,
+            & > svg {
+                width: 24px;
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        &-xs {
+            width: 28px;
+            height: 28px;
+
+            & > img,
+            & > svg {
+                width: 24px;
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

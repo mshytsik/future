@@ -1,0 +1,419 @@
+@import '../../assets/css/utils/index.scss';
+
+.article--conf {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+
+    @include is-screen-max($breakpoint-xl) {
+        grid-template-columns: repeat(10, 1fr);
+        gap: 20px;
+    }
+
+    @include is-screen-max($breakpoint-lg) {
+        min-height: 260px;
+    }
+
+    @include is-screen-max($breakpoint-md) {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+        min-height: 240px;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        height: 560px;
+    }
+
+    .article {
+        &__image {
+            grid-column: span 5;
+            border-bottom-width: 1px;
+            border-right-width: 0;
+            border-radius: 16px 0 0 16px;
+
+            @include is-screen-max($breakpoint-xl) {
+                grid-column: span 4;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                grid-column: span 2;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                flex: 1 0 0;
+                width: 100%;
+                border-bottom-width: 0;
+                border-right-width: 1px;
+                border-radius: 16px 16px 0 0;
+            }
+        }
+
+        &__content {
+            grid-column: span 7;
+            width: calc(100% + 24px);
+            margin-left: -24px;
+            border-top-width: 1px;
+            border-left-width: 0;
+            border-radius: 0 16px 16px 0;
+
+            @include is-screen-max($breakpoint-xl) {
+                grid-column: span 6;
+                width: calc(100% + 20px);
+                margin-left: -20px;
+                padding: 24px;
+            }
+
+            @include is-screen-max($breakpoint-lg) {
+                padding: 20px;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                gap: 12px;
+                grid-column: span 4;
+                width: calc(100% + 16px);
+                margin-left: -16px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                width: 100%;
+                margin-left: 0;
+                padding: 16px;
+                border-top-width: 0;
+                border-left-width: 1px;
+                border-radius: 0 0 16px 16px;
+            }
+        }
+
+        &__header {
+            @include is-screen-max($breakpoint-lg) {
+                gap: 20px;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                display: flex;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                gap: 28px;
+            }
+        }
+
+        &__meta {
+            &:not(:last-child) {
+                &::after {
+                    @include is-screen-max($breakpoint-lg) {
+                        right: -12px;
+                    }
+
+                    @include is-screen-max($breakpoint-sm) {
+                        right: -16px;
+                    }
+                }
+            }
+
+            &.user {
+                .user {
+                    &__verify {
+                        margin-left: -3.5px;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            flex-grow: 1;
+            gap: 16px;
+
+            @include is-screen-max($breakpoint-sm) {
+                gap: 12px;
+            }
+        }
+
+        &__title {
+            @include is-screen-max($breakpoint-xl) {
+                font-size: 28px;
+                line-height: 36px;
+                letter-spacing: -0.15px;
+            }
+
+            @include is-screen-max($breakpoint-lg) {
+                font-size: 24px;
+                line-height: 32px;
+                letter-spacing: 0;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                -webkit-line-clamp: 3;
+                font-size: 21px;
+                line-height: 28px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                -webkit-line-clamp: 2;
+                font-weight: 500;
+            }
+        }
+
+        &__footer {
+            margin-right: 0;
+
+            @include is-screen-max($breakpoint-md) {
+                margin-top: 2px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                height: auto;
+                margin: 18px 0 0;
+            }
+
+            &-meta {
+                max-width: calc(100% - 60px);
+
+                @include is-screen-max($breakpoint-lg) {
+                    gap: 20px;
+                }
+
+                @include is-screen-max($breakpoint-sm) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    max-width: 100%;
+                }
+
+                .article {
+                    &__meta {
+                        display: flex;
+                        align-items: center;
+                        flex-shrink: 0;
+                        gap: 6px;
+
+                        img {
+                            width: 24px;
+                        }
+
+                        p {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        &--date {
+                            flex-shrink: 1;
+                            min-width: 0;
+                        }
+
+                        &::after {
+                            @include is-screen-max($breakpoint-sm) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .article-nav {
+                @include is-screen-max($breakpoint-sm) {
+                    right: -6px;
+                    top: initial;
+                    bottom: -4px;
+                    transform: none;
+                    z-index: 20;
+
+                    .article-nav {
+                        &__toggle {
+                            display: none;
+                        }
+
+                        &__body {
+                            position: relative;
+                            right: initial;
+                            top: initial;
+                            flex-direction: row;
+                            gap: 6px;
+                            min-width: 0;
+                            padding: 0;
+                            border: none;
+                            border-radius: 0;
+                            background-color: transparent;
+                            box-shadow: none;
+                            opacity: 1;
+                            pointer-events: initial;
+                        }
+
+                        &__button {
+                            width: 36px;
+                            height: 36px;
+                            padding: 0;
+                            border-radius: 8px;
+
+                            &-content {
+                                justify-content: center;
+                                gap: 0;
+
+                                img {
+                                    flex-shrink: 0;
+                                    width: 24px;
+                                }
+
+                                p {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-no-speakers {
+        min-height: 280px;
+
+        .article {
+            &__content {
+                @include is-screen-max($breakpoint-xl) {
+                    padding: 24px;
+                }
+            }
+
+            &__header {
+                flex-wrap: wrap;
+                gap: 4px 28px;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &__meta {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                img {
+                    width: 24px;
+                    margin: 2px;
+                }
+
+                &:not(:last-child) {
+                    &::after {
+                        right: -16px;
+                    }
+                }
+            }
+
+            &__body {
+                gap: 8px;
+            }
+
+            &__title {
+                @include is-screen-max($breakpoint-lg) {
+                    font-size: 28px;
+                    line-height: 36px;
+                    letter-spacing: -0.15px;
+                }
+
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 21px;
+                    line-height: 28px;
+                    letter-spacing: 0;
+                }
+            }
+
+            &__subtitle {
+                display: -webkit-box;
+                font-size: 16px;
+                line-height: 24px;
+
+                @include is-screen-max($breakpoint-lg) {
+                    -webkit-line-clamp: 4;
+                }
+
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+
+            &__footer {
+                &-meta {
+                    @include is-screen-max($breakpoint-sm) {
+                        flex-direction: row;
+                        align-items: center;
+                    }
+
+                    .article {
+                        &__meta {
+                            gap: 12px;
+                        }
+                    }
+                }
+
+                .article-nav {
+                    @include is-screen-max($breakpoint-sm) {
+                        right: 0;
+                        top: 50%;
+                        bottom: initial;
+                        transform: translateY(-50%);
+                        z-index: 10;
+
+                        &.is-hidden {
+                            .article-nav {
+                                &__toggle {
+                                    display: flex;
+                                }
+
+                                &__body {
+                                    position: absolute;
+                                    right: 0;
+                                    top: calc(100% + 5px);
+                                    flex-direction: column;
+                                    gap: 0;
+                                    min-width: 260px;
+                                    padding: 8px 0;
+                                    border: 1px solid #e2e2e3;
+                                    border-radius: 12px;
+                                    background-color: #ffffff;
+                                    box-shadow: 0px 12px 48px 0px
+                                        rgba(0, 0, 0, 0.04);
+                                    opacity: 0;
+                                    pointer-events: none;
+                                }
+
+                                &__button {
+                                    width: 100%;
+                                    height: auto;
+                                    padding: 8px 16px;
+                                    border-radius: 0;
+
+                                    &-content {
+                                        justify-content: flex-start;
+                                        gap: 12px;
+
+                                        p {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.is-active {
+                            .article-nav {
+                                &__body {
+                                    opacity: 1;
+                                    pointer-events: initial;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

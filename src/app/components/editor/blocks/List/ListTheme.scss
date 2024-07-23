@@ -1,0 +1,25 @@
+.body.is-dark-mode {
+    .block-list {
+        &__result {
+            li {
+                color: #e2e2e3;
+
+                a {
+                    color: #8c9095;
+                }
+            }
+        }
+
+        ul {
+            &.block-list {
+                &__result {
+                    li {
+                        &::before {
+                            background-color: #e2e2e3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

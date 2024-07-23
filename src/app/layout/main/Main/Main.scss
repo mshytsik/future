@@ -1,0 +1,49 @@
+@import '../../../assets/css/utils/index.scss';
+
+.main {
+    position: relative;
+    padding-top: 72px;
+    width: calc(100vw - 80px);
+    height: 100%;
+
+    @include is-screen-max($breakpoint-xl) {
+        width: calc(100vw - 68px);
+    }
+
+    @include is-screen-max($breakpoint-md) {
+        padding-top: 56px;
+        width: 100vw;
+    }
+
+    &-body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 24px;
+        overflow: hidden auto;
+        transition: opacity 0.3s;
+
+        @include is-screen-max($breakpoint-lg) {
+            padding: 0 16px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            @include is-screen-max($breakpoint-xl) {
+                gap: 16px;
+            }
+
+            @include is-screen-max($breakpoint-lg) {
+                display: none;
+            }
+        }
+    }
+}

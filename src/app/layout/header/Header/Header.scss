@@ -1,0 +1,128 @@
+@import '../../../assets/css/utils/index.scss';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 80px;
+    height: 100%;
+    padding: 20px 10px 24px;
+    border-right: 1px solid #E2E2E3;
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    z-index: 120;
+
+    @include is-screen-max($breakpoint-xl) {
+        width: 68px;
+    }
+
+    @include is-screen-max($breakpoint-md) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        justify-content: flex-end;
+        width: 390px;
+        max-width: 100%;
+        padding: 24px;
+        background-color: #FFFFFF;
+        backdrop-filter: none;
+        transition: transform 0.3s;
+
+        &.is-active {
+            transform: none;
+        }
+    }
+
+    @include is-screen-max($breakpoint-xs) {
+        border-right: none;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+
+        @include is-screen-max($breakpoint-md) {
+            align-items: flex-start;
+            height: auto;
+            padding-bottom: 80px;
+            overflow: hidden auto;
+        }
+    }
+
+    &__logo {
+        width: 44px;
+        cursor: pointer;
+        transition: opacity 0.3s;
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                opacity: 0.6;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+	}
+
+	&-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    
+        @include is-screen-max($breakpoint-md) {
+            gap: 8px;
+            width: 100%;
+        }
+    }
+
+    &-user {
+        position: relative;
+        width: 100%;
+        padding: 6px 16px;
+        transition: background-color 0.3s;
+    
+        @include is-screen-max($breakpoint-md) {
+            padding-bottom: 23px;
+            margin-bottom: 22px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 16px;
+                right: 16px;
+                bottom: 0;
+                height: 1px;
+                background-color: #E2E2E3;
+            }
+        }
+        
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                background-color: rgba(27, 28, 29, 0.06);
+            }
+        }
+    }
+
+    &-toggler {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        width: 56px;
+        height: 56px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.08);
+        z-index: 200;
+
+        img, svg {
+            width: 24px;
+        }
+    }
+}

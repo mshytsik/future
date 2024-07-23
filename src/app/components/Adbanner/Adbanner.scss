@@ -1,0 +1,28 @@
+@import '../../assets/css/utils/index.scss';
+
+.adbanner {
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    background-color: #D2EFFF;
+    overflow: hidden;
+
+    @include is-screen-max($breakpoint-xl) {
+        height: 224px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    &:hover {
+        @include is-screen-min($breakpoint-md) {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

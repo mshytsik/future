@@ -1,0 +1,79 @@
+@import '../../assets/css/utils/index.scss';
+
+.grid-head {
+    &__nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px 25px;
+        flex-shrink: 0;
+
+        @include is-screen-max($breakpoint-sm) {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        &-item {
+            position: relative;
+
+            &:not(:first-child) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -13px;
+                    transform: translateY(-50%);
+                    width: 1px;
+                    height: 28px;
+                    background-color: #E2E2E3;
+
+                    @include is-screen-max($breakpoint-sm) {
+                        display: none;
+                    }
+                }
+            }
+
+            &--button {
+                @include is-screen-max($breakpoint-md) {
+                    padding: 11px;
+
+                    .button {
+                        &__title {
+                            display: none;
+                        }
+                    }
+                }
+
+                @include is-screen-max($breakpoint-sm) {
+                    padding: 7px;
+                }
+            }
+        }
+
+        .grid-filter {
+            position: relative;
+
+            &__button {
+                @include is-screen-max($breakpoint-sm) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            &__popup {
+                position: absolute;
+                right: 0;
+                top: calc(100% + 5px);
+                display: flex;
+                flex-direction: column;
+                min-width: 260px;
+                padding: 8px 0;
+                border-radius: 12px;
+                border: 1px solid #E2E2E3;
+                background-color: #FFFFFF;
+                box-shadow: 0px 12px 48px 0px rgba(0, 0, 0, 0.04);
+                z-index: 10;
+            }
+        }
+    }
+}

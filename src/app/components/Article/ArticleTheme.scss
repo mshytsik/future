@@ -1,0 +1,53 @@
+.body.is-dark-mode {
+    .article {
+        &__image {
+            border-color: #303234;
+        }
+
+        &__content {
+            border-color: #303234;
+            background-color: #1a1b1c;
+        }
+
+        &__header {
+            &::after {
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    #1a1b1c 20px,
+                    #1a1b1c 100%
+                );
+            }
+        }
+
+        &__meta {
+            color: #8c9095;
+
+            &:not(:last-child) {
+                &::after {
+                    background-color: #454749;
+                }
+            }
+
+            &.user {
+                gap: 7.5px;
+            }
+
+            &--tags {
+                .tag {
+                    &:not(:hover) {
+                        background-color: rgba(255, 255, 255, 0.06);
+                    }
+                }
+            }
+        }
+
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__subtitle {
+            color: #8c9095;
+        }
+    }
+}

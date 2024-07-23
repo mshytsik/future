@@ -1,0 +1,28 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .head-nav {
+        .button {
+            &.is-active {
+                background-color: #e2e2e3;
+
+                .button {
+                    &__title {
+                        color: #2f3033;
+                    }
+                }
+
+                &:hover {
+                    border-color: #3f444a;
+                    background-color: #3f444a;
+
+                    .button {
+                        &__title {
+                            color: #e2e2e3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

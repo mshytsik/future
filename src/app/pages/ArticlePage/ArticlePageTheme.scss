@@ -1,0 +1,9 @@
+.body.is-dark-mode {
+    .page-article {
+        .pa-related {
+            &__title {
+                color: #e2e2e3;
+            }
+        }
+    }
+}

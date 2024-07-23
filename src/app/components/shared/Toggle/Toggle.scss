@@ -1,0 +1,47 @@
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+
+    &__label {
+        font-size: 14px;
+        line-height: 20px;
+        color: #1b1c1d;
+    }
+
+    &__input {
+        position: relative;
+        flex-shrink: 0;
+        width: 44px;
+        height: 28px;
+        border-radius: 36px;
+        background-color: #c5c6c8;
+        transition: background-color 0.3s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            left: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            transition: transform 0.3s;
+        }
+    }
+
+    &.is-active {
+        .toggle {
+            &__input {
+                background-color: #4e55f4 !important;
+
+                &::before {
+                    transform: translateX(16px);
+                }
+            }
+        }
+    }
+}

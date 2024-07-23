@@ -1,0 +1,48 @@
+@import '../../../assets/css/utils/index.scss';
+
+.form-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: opacity 0.3s;
+
+            &.sortable-ghost {
+                opacity: 0;
+            }
+
+            &__handle {
+                flex-shrink: 0;
+                cursor: grabbing;
+            }
+
+            .form-input {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    &__error {
+        margin-top: 0;
+    }
+
+    &__add {
+        align-self: flex-start;
+
+        .button {
+            &__title {
+                order: -1;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .filter {
+        &__title {
+            color: #8c9095;
+        }
+
+        &__item {
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(255, 255, 255, 0.06);
+                }
+            }
+
+            p {
+                color: #e2e2e3;
+            }
+        }
+    }
+}

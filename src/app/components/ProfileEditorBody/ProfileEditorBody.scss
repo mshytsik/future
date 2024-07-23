@@ -1,0 +1,172 @@
+@import '../../assets/css/utils/index.scss';
+
+.pe-body {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 4;
+    height: inherit;
+    max-height: inherit;
+
+    .pe-form {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+        max-height: inherit;
+
+        @include is-screen-max($breakpoint-md) {
+            max-height: 100vh;
+        }
+
+        .form {
+            &__body {
+                position: relative;
+                gap: 48px;
+                padding: 32px 0;
+                overflow: hidden auto;
+
+                @include is-screen-max($breakpoint-sm) {
+                    gap: 0;
+                    height: inherit;
+                    padding: 26px 0;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            &__label,
+            &__counter {
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+            }
+
+            &-photo {
+                order: -1;
+                margin-bottom: 16px;
+            }
+
+            &-input {
+                &__input {
+                    @include is-screen-max($breakpoint-sm) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &-photo {
+                @include is-screen-max($breakpoint-sm) {
+                    gap: 16px;
+                    margin-bottom: 8px;
+
+                    &__image {
+                        width: 72px;
+                        height: 72px;
+                        border-radius: 10px;
+
+                        &.is-unknown {
+                            img {
+                                width: 48px;
+                            }
+                        }
+                    }
+
+                    &__body {
+                        gap: 8px;
+                        margin-top: 12px;
+                    }
+                }
+            }
+
+            &__response {
+                margin-top: 0;
+            }
+        }
+
+        &__area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            @include is-screen-max($breakpoint-sm) {
+                height: inherit;
+                padding-bottom: 32px;
+                overflow: hidden auto;
+
+                &:not(.is-active) {
+                    height: 0;
+                    padding: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        &__title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            @include is-screen-max($breakpoint-sm) {
+                position: sticky;
+                top: 0;
+                background-color: #ffffff;
+                padding-bottom: 8px;
+                z-index: 20;
+                order: -1;
+            }
+
+            img {
+                width: 24px;
+                cursor: pointer;
+
+                @include is-screen-min($breakpoint-sm) {
+                    display: none;
+                }
+            }
+
+            p {
+                color: #1b1c1d;
+                font-size: 21px;
+                line-height: 28px;
+
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+    .pe-footer {
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 -24px;
+        padding: 16px 24px;
+        border-top: 1px solid #e2e2e3;
+        background-color: #ffffff;
+
+        @include is-screen-max($breakpoint-md) {
+            margin: 0 -16px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            margin: 0 -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        &__nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}

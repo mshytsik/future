@@ -1,0 +1,46 @@
+@import '../../../assets/css/utils/index.scss';
+
+.subscription {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+
+    &__user {
+        min-width: 0;
+        margin-bottom: 2px;
+
+        .user {
+            &__photo {
+                align-self: flex-start;
+            }
+
+            &__title {
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #1b1c1d;
+                }
+            }
+        }
+    }
+
+    &__button {
+        &.is-active {
+            border-color: #e2e2e3 !important;
+            background-color: transparent;
+
+            .button {
+                &__title {
+                    color: #1b1c1d;
+                }
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(27, 28, 29, 0.1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .pe-head {
+        background-color: #1a1b1c;
+
+        &::after {
+            background-color: #303234;
+        }
+
+        &__content {
+            background-color: #1a1b1c;
+        }
+
+        &__button {
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: #3f444a;
+
+                    p {
+                        color: #e2e2e3;
+                    }
+                }
+            }
+        }
+
+        .pe-banner {
+            background-color: #303234;
+
+            &__title {
+                color: #e2e2e3;
+            }
+
+            &__button {
+                background-color: #1a1b1c;
+
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        background-color: #232628;
+                    }
+                }
+            }
+        }
+    }
+}

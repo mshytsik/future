@@ -1,0 +1,119 @@
+@import '../../assets/css/utils/index.scss';
+
+.pa-footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+
+    @include is-screen-max($breakpoint-sm) {
+        padding-top: 0;
+    }
+
+    &__speakers {
+        margin-bottom: 32px;
+
+        @include is-screen-max($breakpoint-sm) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__prenav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 28px;
+        padding: 32px 0;
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 16px;
+        }
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .tag {
+            padding: 8px 16px;
+            border: none;
+            background-color: rgba(27, 28, 29, 0.06);
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(27, 28, 29, 0.1);
+                }
+            }
+
+            &__icon {
+                display: none;
+            }
+
+            &__title {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        gap: 28px;
+
+        @include is-screen-max($breakpoint-sm) {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            margin-left: auto;
+        }
+
+        a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #1b1c1d;
+            white-space: nowrap;
+            transition: opacity 0.3s;
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    opacity: 0.6;
+                }
+            }
+
+            &:not(:last-child) {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: -16px;
+                    transform: translateY(-50%);
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    background-color: #d5d6d8;
+
+                    @include is-screen-max($breakpoint-sm) {
+                        display: none;
+                    }
+                }
+            }
+
+            &::after {
+                content: '';
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                background-image: url(../../assets/img/icons/arrow-up-right.svg);
+                background-size: 16px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}

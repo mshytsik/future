@@ -1,0 +1,15 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .speakers {
+        &__title {
+            color: #8c9095;
+        }
+
+        &__item {
+            &--more {
+                background-color: #8c9095;
+            }
+        }
+    }
+}

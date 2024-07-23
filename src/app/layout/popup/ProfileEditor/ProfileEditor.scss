@@ -1,0 +1,48 @@
+@import '../../../assets/css/utils/index.scss';
+
+.profile-editor {
+    .popup {
+        &__content {
+            width: 770px;
+            max-width: calc(100vw - 80px);
+            max-height: calc(100vh - 80px);
+            overflow: hidden;
+
+            @include is-screen-max($breakpoint-md) {
+                width: 100%;
+                max-width: initial;
+                max-height: initial;
+                padding: 0 20px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                padding: 0 24px;
+            }
+        }
+
+        &__close {
+            @include is-screen-max($breakpoint-sm) {
+                top: 20px;
+                right: -4px;
+                z-index: 200;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 48px;
+
+        @include is-screen-max($breakpoint-md) {
+            gap: 32px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+}

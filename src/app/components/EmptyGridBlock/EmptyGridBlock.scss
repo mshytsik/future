@@ -1,0 +1,39 @@
+@import '../../assets/css/utils/index.scss';
+
+.empty-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    border-radius: 16px;
+    background-color: #F0F1F1;
+
+    @include is-screen-max($breakpoint-sm) {
+        padding: 48px 24px;
+    }
+
+    &__title {
+        font-size: 21px;
+        line-height: 28px;
+        color: #1B1C1D;
+        text-align: center;
+
+        @include is-screen-max($breakpoint-lg) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #999BA3;
+        text-align: center;
+    }
+
+    &__button {
+        margin-top: 20px;
+    }
+}

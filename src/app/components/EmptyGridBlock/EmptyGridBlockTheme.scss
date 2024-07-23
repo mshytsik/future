@@ -1,0 +1,22 @@
+.body.is-dark-mode {
+    .empty-block {
+        background-color: #262729;
+
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__button {
+            &:hover {
+                border-color: transparent;
+                background-color: #8c9095;
+
+                .button {
+                    &__title {
+                        color: #2f3033;
+                    }
+                }
+            }
+        }
+    }
+}

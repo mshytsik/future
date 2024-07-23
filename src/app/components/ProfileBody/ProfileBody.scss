@@ -1,0 +1,226 @@
+@import '../../assets/css/utils/index.scss';
+
+.profile-body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    margin-top: 44px;
+    transition: height 0.3s;
+
+    @include is-screen-max($breakpoint-xl) {
+        gap: 20px;
+        margin-top: 54px;
+    }
+
+    @include is-screen-max($breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 26px;
+    }
+
+    @include is-screen-min($breakpoint-sm) {
+        height: auto !important;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        height: 108px;
+        margin-top: 24px;
+        overflow: hidden;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-shrink: 0;
+        gap: 28px;
+        height: 168px;
+        grid-column: span 2;
+        transition: height 0.3s;
+        overflow: hidden;
+
+        @include is-screen-max($breakpoint-xl) {
+            gap: 8px;
+        }
+
+        @include is-screen-max($breakpoint-lg) {
+            gap: 18px;
+            grid-column: span 1;
+        }
+
+        @include is-screen-max($breakpoint-md) {
+            gap: 8px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 0;
+            height: auto !important;
+        }
+
+        .profile-block {
+            gap: 4px;
+
+            &__value {
+                @include is-screen-max($breakpoint-md) {
+                    line-height: 21px;
+                }
+            }
+        }
+
+        .profile-info {
+            &__toggle {
+                display: none;
+                margin-top: 0;
+                transform: translateY(8px);
+
+                @include is-screen-max($breakpoint-xl) {
+                    transform: none;
+                }
+
+                @include is-screen-max($breakpoint-lg) {
+                    margin-bottom: 0;
+                    transform: translateY(8px);
+                }
+
+                @include is-screen-max($breakpoint-sm) {
+                    position: absolute;
+                    left: 8px;
+                    bottom: 16px;
+                    transform: none;
+                    margin-left: 0;
+                }
+
+                .button {
+                    img {
+                        transform: scaleY(-1);
+                    }
+                }
+            }
+        }
+    }
+
+    .body-blocks {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-shrink: 0;
+        gap: 40px;
+        grid-column: span 3;
+        height: 176px;
+        overflow: hidden;
+        transition: height 0.3s;
+
+        @include is-screen-max($breakpoint-lg) {
+            gap: 28px;
+            height: 216px;
+            grid-column: span 1;
+            margin-bottom: -40px;
+        }
+
+        @include is-screen-max($breakpoint-md) {
+            height: 224px;
+            margin-bottom: -48px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 16px;
+            height: auto !important;
+            margin-bottom: 0;
+        }
+
+        &__track {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            overflow: hidden;
+
+            @include is-screen-max($breakpoint-lg) {
+                gap: 44px;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                gap: 24px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                gap: 32px;
+            }
+        }
+
+        &__shorts {
+            gap: 24px;
+
+            @include is-screen-max($breakpoint-xl) {
+                column-gap: 20px;
+            }
+
+            @include is-screen-max($breakpoint-lg) {
+                gap: 16px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                column-gap: 12px;
+            }
+
+            .profile-block {
+                @include is-screen-min-max($breakpoint-sm, $breakpoint-md) {
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        &__team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            margin-top: 6px;
+            margin-bottom: 20px;
+
+            @include is-screen-max($breakpoint-xl) {
+                margin-bottom: 12px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                margin-bottom: 0;
+            }
+
+            .user {
+                &__title {
+                    p {
+                        @include is-screen-max($breakpoint-lg) {
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-shrink: 0;
+        gap: 24px;
+
+        @include is-screen-max($breakpoint-sm) {
+            padding: 16px 0;
+        }
+
+        a {
+            width: 24px;
+            transition: opacity 0.3s;
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}

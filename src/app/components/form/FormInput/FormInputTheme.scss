@@ -1,0 +1,23 @@
+.body.is-dark-mode {
+    .form-input {
+        &__input {
+            background-color: #262729;
+            color: #e2e2e3;
+
+            &::placeholder {
+                color: #70717a;
+            }
+        }
+
+        .input-nav {
+            &::before {
+                background: linear-gradient(
+                    90deg,
+                    rgba(38, 39, 41, 0) 0%,
+                    #262729 20px,
+                    #262729 100%
+                );
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.body.is-dark-mode {
+    .block-text {
+        &__form,
+        &__result {
+            color: #e2e2e3;
+
+            a {
+                color: #8c9095;
+            }
+        }
+    }
+}

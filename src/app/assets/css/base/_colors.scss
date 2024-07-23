@@ -1,0 +1,18 @@
+$colors:    'blue-gem'      #EEEDFD #4409B9,
+            'green-pea'     #E7F9F3 #216E55,
+            'meteor'        #FDEFE2 #C56511,
+            'honey-flower'  #E6EBEF #4D176E,
+            'shiraz'        #FFEBEE #BD0F2C,
+            'martinique'    #E6DFEC #37364F;
+
+.color {
+    @each $name, $bg-color, $font-color in $colors {
+        &--#{$name} {
+            background-color: $bg-color !important;
+    
+            & > p {
+                color: $font-color !important;
+            }
+        }
+    }
+}

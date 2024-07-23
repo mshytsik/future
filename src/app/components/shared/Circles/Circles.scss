@@ -1,0 +1,82 @@
+@import '../../../assets/css/utils/index.scss';
+
+.circles {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        & + .circles__item--more {
+            display: none;
+        }
+        
+        @include is-screen-max($breakpoint-lg) {
+            width: 28px;
+            height: 28px;
+            
+            &:nth-child(n + 4) {
+                display: none;
+
+                & + .circles__item--more {
+                    display: flex;
+
+                    span {
+                        display: block;
+                    }
+
+                    p {
+                        display: none;
+                    }
+                }
+            }
+        }
+        
+        &:not(:first-child) {
+            margin-left: -4px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 100%;
+            color: #000000;
+            text-align: center;
+
+            @include is-screen-max($breakpoint-lg) {
+                font-size: 16px;
+            }
+        }
+
+        &--more {
+            display: flex;
+            gap: 3px;
+            background-color: #C5C6C8;
+            
+            span {
+                display: none;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: #FFFFFF;
+            }
+
+            p {
+                color: #FFFFFF;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.body.is-dark-mode {
+    .topic {
+        &__icon {
+            background-color: #262729;
+        }
+
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__meta {
+            p {
+                color: #8c9095;
+
+                &:not(:last-child) {
+                    &::before {
+                        background-color: #454749;
+                    }
+                }
+            }
+        }
+    }
+}

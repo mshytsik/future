@@ -1,0 +1,190 @@
+@import '../../assets/css/utils/index.scss';
+
+.speakers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+
+    &__title {
+        font-size: 13px;
+        line-height: 18px;
+        color: #70717a;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        @include is-screen-max($breakpoint-sm) {
+            flex-grow: 1;
+            gap: 16px;
+        }
+
+        &--collapsable {
+            flex-wrap: nowrap;
+            gap: 28px;
+
+            @include is-screen-max($breakpoint-md) {
+                gap: 24px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                flex-grow: 0;
+                gap: 16px;
+            }
+
+            &.show-all {
+                flex-wrap: wrap;
+
+                .speakers {
+                    &__item {
+                        display: flex !important;
+
+                        &--more {
+                            span {
+                                width: 15px;
+                                height: 3px;
+
+                                &:nth-child(1) {
+                                    transform: translate(-50%, -50%)
+                                        rotate(45deg);
+                                }
+
+                                &:nth-child(2) {
+                                    opacity: 0;
+                                }
+
+                                &:nth-child(3) {
+                                    transform: translate(-50%, -50%)
+                                        rotate(-45deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:not(.show-all) {
+                .speakers {
+                    &__item {
+                        &.user {
+                            &.is-hidden {
+                                gap: 0;
+                                margin-right: -36px;
+
+                                @include is-screen-max($breakpoint-md) {
+                                    margin-right: -32px;
+                                }
+
+                                @include is-screen-max($breakpoint-sm) {
+                                    margin-right: -24px;
+                                }
+
+                                .user {
+                                    &__title,
+                                    &__verify {
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            &:not(.is-hidden) + .speakers__item--more {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .speakers {
+                &__item {
+                    &.user {
+                        .user {
+                            &__photo {
+                                width: 32px;
+                                height: 32px;
+                            }
+
+                            &__title {
+                                p {
+                                    font-size: 13px;
+                                    line-height: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        flex-shrink: 0;
+
+        &.user {
+            gap: 10px;
+            flex-shrink: 0;
+
+            .user {
+                &__photo {
+                    width: 64px;
+                    height: 64px;
+                }
+
+                &__title {
+                    p {
+                        font-size: 16px;
+                        line-height: 24px;
+
+                        @include is-screen-max($breakpoint-sm) {
+                            font-size: 14px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--more {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #c5c6c8;
+            transition: transform 0.3s;
+            z-index: 10;
+            cursor: pointer;
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    transform: scale(1.1);
+                }
+            }
+
+            span {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 4px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: #ffffff;
+                transition:
+                    transform 0.3s,
+                    opacity 0.3s;
+
+                &:nth-child(1) {
+                    transform: translate(calc(-50% - 7px), -50%);
+                }
+
+                &:nth-child(3) {
+                    transform: translate(calc(-50% + 7px), -50%);
+                }
+            }
+        }
+    }
+}

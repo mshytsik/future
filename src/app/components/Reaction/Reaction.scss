@@ -1,0 +1,262 @@
+@import '../../assets/css/utils/index.scss';
+
+.reaction {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    padding: 16px 24px;
+    border: 1px solid #E2E2E3;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+
+    @include is-screen-max($breakpoint-sm) {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 16px;
+    }
+
+    &-icons {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 20px;
+        height: 56px;
+    
+        @include is-screen-max($breakpoint-sm) {
+            align-self: flex-start;
+            height: auto;
+        }
+
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+
+            @include is-screen-max($breakpoint-sm) {
+                position: absolute;
+                right: -12px;
+                bottom: -12px;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+            }
+
+            img {
+                width: 24px;
+            
+                @include is-screen-max($breakpoint-sm) {
+                    width: 20px;
+                }
+            }
+        }
+
+        &__user-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: opacity 0.3s;
+        
+            @include is-screen-max($breakpoint-sm) {
+                width: 48px;
+                height: 48px;
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    opacity: 0.6;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            p {
+                font-family: "Ubuntu Mono", sans-serif;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+                color: #05128A;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: 12px;
+        min-width: 0;
+    
+        @include is-screen-max($breakpoint-sm) {
+            gap: 20px;
+        }
+
+        .reaction-body {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            &__main {
+                align-self: center;
+                min-width: 0;
+
+                .reaction-event {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-top: 2px;
+                    font-size: 16px;
+                    line-height: 24px;
+                
+                    @include is-screen-max($breakpoint-sm) {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+
+                    &__main {
+                        color: #70717A;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+
+                        a {
+                            display: initial;
+                            margin-left: 8px;
+                            color: #1B1C1D;
+                            transition: opacity 0.3s;
+                            cursor: pointer;
+                
+                            &:hover {
+                                @include is-screen-min($breakpoint-md) {
+                                    opacity: 0.6;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__meta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0 28px;
+            
+                @include is-screen-max($breakpoint-sm) {
+                    column-gap: 20px;
+                }
+                
+                & > * {
+                    position: relative;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #70717A;
+                    white-space: nowrap;
+                
+                    @include is-screen-max($breakpoint-sm) {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                
+                    &:not(:last-child) {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            right: -16px;
+                            transform: translateY(-50%);
+                            width: 4px;
+                            height: 4px;
+                            border-radius: 50%;
+                            background-color: #D5D6D8;
+                            
+                            @include is-screen-max($breakpoint-sm) {
+                                right: -12px;
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    color: #1B1C1D;
+                    transition: opacity 0.3s;
+        
+                    &:hover {
+                        @include is-screen-min($breakpoint-md) {
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+
+            .reaction-sidebar {
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+                height: 56px;
+            
+                @include is-screen-max($breakpoint-sm) {
+                    position: absolute;
+                    right: 17px;
+                    top: 17px;
+                }
+
+                &__post {
+                    width: 80px;
+                    height: inherit;
+                    border-radius: 8px;
+                    overflow: hidden;
+                
+                    &:hover {
+                        img {
+                            @include is-screen-min($breakpoint-md) {
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.3s;
+                    }
+                }
+
+                &__subscribe {
+                    @include is-screen-max($breakpoint-sm) {
+                        transform: translateY(-4px);
+                    }
+
+                    &.is-active {
+                        border-color: #E2E2E3 !important;
+                        background-color: transparent;
+
+                        .button {
+                            &__title {
+                                color: #1B1C1D;
+                            }
+                        }
+
+                        &:hover {
+                            @include is-screen-min($breakpoint-md) {
+                                background-color: rgba(27, 28, 29, 0.10);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

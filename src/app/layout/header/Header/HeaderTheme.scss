@@ -1,0 +1,37 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .header {
+        border-color: #303234;
+        background-color: rgba(27, 28, 29, 0.88);
+
+        @include is-screen-max($breakpoint-md) {
+            background-color: #1a1b1c;
+        }
+
+        &-user {
+            @include is-screen-max($breakpoint-md) {
+                &::before {
+                    background-color: #303234;
+                }
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(255, 255, 255, 0.06);
+                }
+            }
+        }
+
+        &-toggler {
+            border-color: #303234;
+            background-color: #1a1b1c;
+
+            svg {
+                path {
+                    fill: #e2e2e3;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.body.is-dark-mode {
+    .editor-popup {
+        &__footer {
+            background-color: #1a1b1c;
+
+            &::before {
+                background-color: #303234;
+            }
+        }
+    }
+}

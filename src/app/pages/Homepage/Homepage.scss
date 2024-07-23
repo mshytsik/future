@@ -1,0 +1,37 @@
+@import '../../assets/css/utils/index.scss';
+
+.page-home {
+    .main-body {
+        padding-bottom: 32px;
+
+        &__content {
+            gap: 64px;
+        
+            @include is-screen-max($breakpoint-lg) {
+                gap: 40px;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                gap: 32px;
+            }
+        }
+
+        .top-block {
+            @include is-screen-max($breakpoint-xl) {
+                margin-bottom: -48px;
+            }
+            
+            @include is-screen-max($breakpoint-lg) {
+                margin-bottom: 0;
+            }
+
+            &__shorts {
+                row-gap: 8px;
+                
+                @include is-screen-min-max($breakpoint-sm, $breakpoint-md) {
+                    row-gap: 10px;
+                }
+            }
+        }
+    }
+}

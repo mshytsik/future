@@ -1,0 +1,48 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .article-nav {
+        &:not(.is-hidden),
+        &.is-active {
+            .article-nav {
+                &__toggle {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                #1a1b1c 20px,
+                #1a1b1c 100%
+            );
+        }
+
+        &__button {
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+
+        &.is-hidden {
+            .article-nav {
+                &__body {
+                    border-color: #303234;
+                    background-color: #1a1b1c;
+                }
+
+                &__button {
+                    &:hover {
+                        @include is-screen-min($breakpoint-md) {
+                            background-color: rgba(255, 255, 255, 0.06);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../assets/css/utils/index.scss';
+
+@import '../../assets/css/utils/index.scss';
+
+.leader {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        @include is-screen-min($breakpoint-md) {
+            background-color: rgba(27, 28, 29, 0.06);
+        }
+    }
+
+    &__user {
+        flex-grow: 1;
+        min-width: 0;
+
+        .user {
+            gap: 16px;
+
+            &__photo {
+                width: 48px;
+                height: 48px;
+            }
+        }
+    }
+
+    &__rating {
+        flex-shrink: 0;
+        padding: 4px 6px;
+        border-radius: 4px;
+        background-color: #f0f1f1;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1b1c1d;
+    }
+}

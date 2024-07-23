@@ -1,0 +1,27 @@
+@import '../../assets/css/utils/index.scss';
+
+.markets {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 8px;
+    margin: 16px -24px 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    overflow: auto hidden;
+
+    @include is-screen-max($breakpoint-xl) {
+        margin-bottom: 32px;
+    }
+
+    @include is-screen-max($breakpoint-lg) {
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    @include is-screen-max($breakpoint-md) {
+        margin-bottom: 16px;
+    }
+}

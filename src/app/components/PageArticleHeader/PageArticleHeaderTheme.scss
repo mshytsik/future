@@ -1,0 +1,39 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .pa-header {
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__user {
+            .button {
+                @include is-screen-max($breakpoint-sm) {
+                    background-color: #f0f1f1;
+                }
+
+                &.is-active {
+                    .button {
+                        &__title {
+                            color: #e2e2e3;
+                        }
+                    }
+
+                    &:hover {
+                        @include is-screen-min($breakpoint-md) {
+                            background-color: #3f444a;
+                        }
+                    }
+                }
+            }
+        }
+
+        .moderation {
+            background-color: #101112;
+
+            &__message {
+                color: #e2e2e3;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../assets/css/utils/index.scss';
+
+.page-search {
+    .main-body {
+        &__content {
+            margin-top: 65px;
+
+            @include is-screen-max($breakpoint-lg) {
+                margin-top: 34px;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                margin-top: 30px;
+            }
+
+            @include is-screen-max($breakpoint-sm) {
+                margin-top: 22px;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 64px;
+        letter-spacing: -0.4px;
+        color: #1b1c1d;
+
+        @include is-screen-max($breakpoint-sm) {
+            margin-bottom: 24px;
+            font-size: 36px;
+            line-height: 40px;
+        }
+    }
+
+    .search-form {
+        margin-bottom: 28px;
+
+        @include is-screen-max($breakpoint-xl) {
+            margin-bottom: 16px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            margin-bottom: 24px;
+        }
+
+        .form {
+            margin-bottom: 40px;
+
+            @include is-screen-max($breakpoint-xl) {
+                margin-bottom: 24px;
+            }
+        }
+
+        &__nav {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        &__filter {
+            flex-shrink: 0;
+        }
+    }
+}

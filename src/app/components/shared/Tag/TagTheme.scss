@@ -1,0 +1,17 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .tag {
+        border-color: #303234;
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                background-color: #303234;
+            }
+        }
+
+        &__title {
+            color: #e2e2e3;
+        }
+    }
+}

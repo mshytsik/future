@@ -1,0 +1,28 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .editor-nav {
+        border-bottom-color: #303234;
+        background-color: rgb(27, 28, 29);
+
+        &__back {
+            @include is-screen-max($breakpoint-lg) {
+                border-color: #303234 !important;
+            }
+        }
+
+        .nav-title {
+            &__button {
+                .button {
+                    &__title {
+                        &:hover {
+                            @include is-screen-min($breakpoint-md) {
+                                color: #8f9193;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

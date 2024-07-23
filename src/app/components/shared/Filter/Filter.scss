@@ -1,0 +1,61 @@
+@import '../../../assets/css/utils/index.scss';
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include is-screen-max($breakpoint-lg) {
+        gap: 12px;
+    }
+    
+    @include is-screen-max($breakpoint-md) {
+        gap: 8px;
+    }
+
+    &__title {
+        padding: 0 16px;
+        font-size: 21px;
+        line-height: 28px;
+        color: #1B1C1D;
+
+        @include is-screen-max($breakpoint-lg) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+        
+        @include is-screen-max($breakpoint-md) {
+            font-size: 16px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 8px 16px;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                background-color: rgba(27, 28, 29, 0.06);
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            color: #1B1C1D;
+            white-space: nowrap;
+        }
+    }
+}

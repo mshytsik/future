@@ -1,0 +1,19 @@
+.body.is-dark-mode {
+    .editor-preview {
+        &__cover {
+            background-color: #262729;
+
+            .button {
+                background-color: #f0f1f1;
+            }
+        }
+
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__description {
+            color: #8c9095;
+        }
+    }
+}

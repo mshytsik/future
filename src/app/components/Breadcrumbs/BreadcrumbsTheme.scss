@@ -1,0 +1,19 @@
+.body.is-dark-mode {
+    .breadcrumbs {
+        li {
+            color: #e2e2e3;
+
+            a {
+                color: #8c9095;
+
+                &:hover {
+                    color: #e2e2e3;
+                }
+            }
+
+            &:not(:last-child):after {
+                color: #8c9095;
+            }
+        }
+    }
+}

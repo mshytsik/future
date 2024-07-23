@@ -1,0 +1,54 @@
+@import '../../assets/css/utils/index.scss';
+
+.articles-grid {
+    .grid-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 12px;
+        margin-bottom: 24px;
+
+        @include is-screen-max($breakpoint-xl) {
+            padding-top: 0;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        &__filter {
+            flex-shrink: 0;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding-bottom: 50px;
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 16px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 50px;
+
+        .pagination {
+            min-width: 0;
+        }
+    }
+
+    &__load {
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+}

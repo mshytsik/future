@@ -1,0 +1,57 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .menu-item {
+        .button {
+            svg {
+                path {
+                    fill: #696c71;
+
+                    @include is-screen-max($breakpoint-md) {
+                        fill: #e2e2e3;
+                    }
+                }
+            }
+
+            &__title {
+                @include is-screen-max($breakpoint-md) {
+                    color: #e2e2e3;
+                }
+            }
+        }
+
+        &.is-active {
+            .button {
+                svg {
+                    path {
+                        fill: #e2e2e3;
+                    }
+                }
+            }
+        }
+
+        &--add {
+            &::before {
+                background-color: #303234;
+            }
+
+            .button {
+                svg {
+                    path {
+                        fill: #7177f6;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            @include is-screen-min($breakpoint-md) {
+                                fill: #4e55f4;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

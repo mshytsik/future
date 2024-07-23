@@ -1,0 +1,40 @@
+.body.is-dark-mode {
+    .popup {
+        &__overlay {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        &__content {
+            background-color: #1a1b1c;
+        }
+
+        &__head {
+            background-color: #1a1b1c;
+        }
+
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__subtitle {
+            color: #8c9095;
+
+            a {
+                color: #e2e2e3;
+            }
+
+            strong {
+                color: #e2e2e3;
+            }
+        }
+
+        &__footer {
+            background-color: #262729;
+            color: #696c71;
+
+            a {
+                color: #9379ff;
+            }
+        }
+    }
+}

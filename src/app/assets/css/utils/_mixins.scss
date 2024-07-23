@@ -1,0 +1,42 @@
+@mixin is-screen-min($size) {
+	@media screen and (min-width: $size) {
+		@content;
+	}
+}
+
+@mixin is-screen-min-max($size-min, $size-max) {
+	@media screen and (min-width: $size-min) and (max-width: calc($size-max - 0.1px)) {
+		@content;
+	}
+}
+
+@mixin is-screen-max($size) {
+	@media screen and (max-width: calc($size - 0.1px)) {
+		@content;
+	}
+}
+
+@mixin sizes-grid() {
+	@content;
+
+	@include is-screen-min($breakpoint-xl) {
+		&-xl {
+			@content;
+		}
+	}
+
+	$sizes: "lg" $breakpoint-lg $breakpoint-xl, "md" $breakpoint-md $breakpoint-lg, "sm" $breakpoint-sm $breakpoint-md;
+	@each $name, $from, $to in $sizes {
+		@include is-screen-min-max($from, $to) {
+			&-#{$name} {
+				@content;
+			}
+		}
+	}
+
+	@include is-screen-max($breakpoint-sm) {
+		&-xs {
+			@content;
+		}
+	}
+}

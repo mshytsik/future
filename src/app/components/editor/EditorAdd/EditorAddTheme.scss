@@ -1,0 +1,9 @@
+.body.is-dark-mode {
+    .editor-add {
+        &__input {
+            &.is-active {
+                color: #e2e2e3;
+            }
+        }
+    }
+}

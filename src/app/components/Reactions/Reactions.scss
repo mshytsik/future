@@ -1,0 +1,78 @@
+@import '../../assets/css/utils/index.scss';
+
+.profile-reactions {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+
+    @include is-screen-max($breakpoint-xl) {
+        grid-template-columns: repeat(10, 1fr);
+        gap: 20px;
+    }
+
+    @include is-screen-max($breakpoint-lg) {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        margin-top: 8px;
+    }
+
+    .reactions-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        grid-column: span 9;
+
+        @include is-screen-max($breakpoint-xl) {
+            grid-column: span 7;
+        }
+
+        @include is-screen-max($breakpoint-lg) {
+            grid-column: span 4;
+        }
+        
+        @include is-screen-max($breakpoint-md) {
+            grid-column: span 6;
+        }
+    
+        .reactions-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &__title {
+                margin-left: 24px;
+                font-size: 16px;
+                line-height: 24px;
+                color: #8F9193;
+            }
+
+            &__list {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    }
+
+    .reactions-filter {
+        grid-column: span 3;
+        align-self: flex-start;
+        margin-top: 32px;
+        padding: 20px 12px;
+        border: 1px solid #E2E2E3;
+        border-radius: 16px;
+        background-color: #FFFFFF;
+
+        @include is-screen-max($breakpoint-lg) {
+            grid-column: span 2;
+            padding: 16px 4px;
+        }
+        
+        @include is-screen-max($breakpoint-md) {
+            display: none;
+        }
+    }
+}

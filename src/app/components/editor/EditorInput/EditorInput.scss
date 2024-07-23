@@ -1,0 +1,31 @@
+@import '../../../assets/css/utils/index.scss';
+
+.editor-input {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px 24px;
+
+    @include is-screen-max($breakpoint-sm) {
+        flex-direction: column;
+    }
+
+    &__input {
+        flex-grow: 1;
+
+        @include is-screen-max($breakpoint-sm) {
+            width: 100%;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        padding: 2px 0;
+
+        @include is-screen-max($breakpoint-sm) {
+            align-self: flex-end;
+        }
+    }
+}

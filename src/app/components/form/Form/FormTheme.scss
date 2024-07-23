@@ -1,0 +1,14 @@
+.body.is-dark-mode {
+    .form {
+        input,
+        textarea {
+            &::placeholder {
+                color: #70717a;
+            }
+        }
+
+        &__subtitle {
+            color: #e2e2e3;
+        }
+    }
+}

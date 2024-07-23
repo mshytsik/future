@@ -1,0 +1,97 @@
+@import '../../assets/css/utils/index.scss';
+
+.home-block {
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        margin-top: 15px;
+        margin-bottom: 24px;
+
+        @include is-screen-max($breakpoint-xl) {
+            margin-bottom: 17px;
+        }
+        
+        @include is-screen-max($breakpoint-sm) {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .home-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        
+            &__icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background-color: #EDEEFD;
+                overflow: hidden;
+        
+                p {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 20px;
+                    letter-spacing: 0.2px;
+                    color: #4409B9;
+                    text-align: center;
+                }
+            }
+        
+            &__title {
+                font-weight: 500;
+                font-size: 28px;
+                line-height: 36px;
+                letter-spacing: -0.15px;
+                color: #1B1C1D;
+                
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 21px;
+                    line-height: 28px;
+                    letter-spacing: 0;
+                }
+            }
+        }
+
+        .button {
+            @include is-screen-max($breakpoint-md) {
+                padding: 7px 11px;
+            }
+            
+            @include is-screen-max($breakpoint-sm) {
+                padding: 7px;
+            }
+
+            &__title {
+                @include is-screen-max($breakpoint-md) {
+                    padding: 2px 4px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+
+                @include is-screen-max($breakpoint-sm) {
+                    display: none;
+                }
+            }
+
+            img {
+                display: none;
+                width: 24px;
+
+                @include is-screen-max($breakpoint-sm) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: 16px;
+    }
+}

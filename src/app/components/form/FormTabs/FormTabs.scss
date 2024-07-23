@@ -1,0 +1,11 @@
+@import '../../../assets/css/utils/index.scss';
+
+.form-input {
+    &--tabs {
+        .tabs {
+            &__item {
+                flex: 1 1 0;
+            }
+        }
+    }
+}

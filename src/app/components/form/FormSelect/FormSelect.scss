@@ -1,0 +1,35 @@
+@import '../../../assets/css/utils/index.scss';
+
+.form-input {
+    &--select {
+        .select {
+            &__button {
+                justify-content: flex-start;
+
+                .button {
+                    &__title {
+                        padding: 0;
+                        text-align: left;
+                    }
+                }
+
+                .input-nav {
+                    right: 12px;
+                }
+            }
+
+            &__body {
+                left: 0;
+                min-width: 0;
+            }
+        }
+
+        &.is-active {
+            .select {
+                &__button {
+                    border-color: #97c8f5;
+                }
+            }
+        }
+    }
+}

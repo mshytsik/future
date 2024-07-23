@@ -1,0 +1,143 @@
+@import '../../assets/css/utils/index.scss';
+
+.pa-header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .breadcrumbs {
+        margin-bottom: -10px;
+
+        @include is-screen-max($breakpoint-lg) {
+            margin-bottom: -20px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 64px;
+        letter-spacing: -0.4px;
+        color: #1b1c1d;
+
+        @include is-screen-max($breakpoint-sm) {
+            font-size: 36px;
+            line-height: 40px;
+        }
+    }
+
+    &__user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 0;
+
+        .user {
+            &__photo {
+                width: 64px;
+                height: 64px;
+            }
+        }
+
+        .button {
+            @include is-screen-max($breakpoint-sm) {
+                padding: 8px !important;
+                border-width: 0;
+                background-color: #232628;
+            }
+
+            img {
+                width: 24px;
+
+                @include is-screen-min($breakpoint-sm) {
+                    display: none;
+                }
+            }
+
+            &__title {
+                order: -1;
+
+                @include is-screen-max($breakpoint-sm) {
+                    display: none;
+                }
+            }
+
+            &.is-active {
+                border-color: #e2e2e3 !important;
+                background-color: transparent;
+
+                @include is-screen-max($breakpoint-sm) {
+                    border-color: transparent !important;
+                    background-color: #232628;
+                }
+
+                .button {
+                    &__title {
+                        color: #1b1c1d;
+                    }
+                }
+
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        background-color: rgba(27, 28, 29, 0.1);
+                    }
+                }
+            }
+        }
+
+        &--disabled {
+            .user,
+            .button {
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    .moderation {
+        margin-top: 28px;
+        padding: 20px;
+        border: 2px solid #e04748;
+        border-radius: 8px;
+        background-color: #f0f1f1;
+
+        @include is-screen-max($breakpoint-sm) {
+            padding: 16px;
+        }
+
+        &__title {
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 21px;
+            line-height: 28px;
+            color: #e04748;
+        }
+
+        &__message {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #1b1c1d;
+        }
+    }
+
+    &__image {
+        margin-top: 28px;
+        border-radius: 12px;
+        overflow: hidden;
+
+        @include is-screen-max($breakpoint-sm) {
+            margin-top: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

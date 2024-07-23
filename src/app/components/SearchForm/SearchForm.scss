@@ -1,0 +1,16 @@
+@import '../../assets/css/utils/index.scss';
+
+.search-form {
+    margin-bottom: 0;
+
+    .form {
+        margin-bottom: 16px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}

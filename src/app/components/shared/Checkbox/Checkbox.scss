@@ -1,0 +1,36 @@
+@import '../../../assets/css/utils/index.scss';
+
+.checkbox {
+    position: relative;
+    flex-shrink: 0;
+
+    &__field {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        margin: 2px;
+        border-radius: 4px;
+        background-color: #4E55F4;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    }
+
+    &.is-active {
+        .checkbox {
+            &__field {
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

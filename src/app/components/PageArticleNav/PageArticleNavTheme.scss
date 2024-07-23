@@ -1,0 +1,37 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .pa-nav {
+        border-color: #303234;
+
+        .pa-meta {
+            &__item {
+                p {
+                    color: #8c9095;
+                }
+            }
+        }
+
+        .pa-actions {
+            &__button {
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                }
+            }
+        }
+
+        &--conference-head {
+            .pa-meta {
+                &__item {
+                    &:not(:last-child) {
+                        &::after {
+                            background-color: #454749;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

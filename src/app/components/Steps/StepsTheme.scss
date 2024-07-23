@@ -1,0 +1,40 @@
+.body.is-dark-mode {
+    .steps {
+        .step {
+            &__icon {
+                background-color: #4f5255;
+
+                p {
+                    color: #ffffff;
+                }
+            }
+
+            &.is-active,
+            &.is-passed {
+                .step {
+                    &__icon {
+                        background-color: #f0f1f1;
+
+                        p {
+                            color: #2f3033;
+                        }
+                    }
+                }
+            }
+
+            &__title {
+                color: #e2e2e3;
+            }
+
+            &__subtitle {
+                color: #8c9095;
+            }
+
+            &:not(:last-child) {
+                &::after {
+                    background-color: #303234;
+                }
+            }
+        }
+    }
+}

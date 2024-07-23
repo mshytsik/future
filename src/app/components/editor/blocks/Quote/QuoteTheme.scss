@@ -1,0 +1,12 @@
+.body.is-dark-mode {
+    .block-quote {
+        &__result {
+            background-color: #1a1b1c;
+            color: #e2e2e3;
+        }
+
+        &__form {
+            background-color: #1a1b1c;
+        }
+    }
+}

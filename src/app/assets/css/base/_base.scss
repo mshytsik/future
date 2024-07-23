@@ -1,0 +1,120 @@
+.body {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #f6f6f6;
+    font:
+        normal 500 16px / 133.333% 'Manrope',
+        sans-serif;
+    color: #000000;
+    overflow: hidden;
+    cursor: default;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+.hide {
+    @include sizes-grid() {
+        display: none !important;
+    }
+
+    &-scroll {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+
+    @include is-screen-max($breakpoint-xl) {
+        gap: 20px;
+    }
+
+    @include is-screen-max($breakpoint-lg) {
+        gap: 16px;
+    }
+
+    & > .col {
+        &-0 {
+            display: none !important;
+        }
+
+        @for $i from 1 through 12 {
+            &-#{$i} {
+                grid-column: span #{$i};
+            }
+        }
+
+        $sizes:
+            'xl' $breakpoint-xl,
+            'lg' $breakpoint-lg,
+            'md' $breakpoint-md,
+            'sm' $breakpoint-sm,
+            'xs' $breakpoint-xs;
+        @each $size, $breakpoint in $sizes {
+            @include is-screen-max($breakpoint) {
+                &-#{$size}-0 {
+                    display: none !important;
+                }
+
+                @for $i from 1 through 12 {
+                    &-#{$size}-#{$i} {
+                        grid-column: span #{$i};
+                    }
+                }
+            }
+        }
+    }
+
+    &-16 {
+        @include is-screen-min($breakpoint-xl) {
+            grid-template-columns: repeat(16, 1fr);
+
+            & > .col {
+                @for $i from 0 through 16 {
+                    &-#{$i} {
+                        grid-column: span #{$i};
+                    }
+                }
+            }
+        }
+    }
+}
+
+.is-disabled,
+.is-disabled * {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.is-popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+
+    &.is-active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+}
+
+.is-link {
+    text-decoration-line: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: #e2e2e3;
+    transition: text-decoration-color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration-color: #1b1c1d;
+    }
+}

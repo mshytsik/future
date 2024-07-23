@@ -1,0 +1,35 @@
+@import '../../assets/css/utils/index.scss';
+
+.editor-footer {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 0;
+    z-index: 10;
+
+    @include is-screen-max($breakpoint-lg) {
+        left: 16px;
+        right: 16px;
+    }
+
+    @include is-screen-max($breakpoint-md) {
+        padding-bottom: 80px;
+        background-color: #f6f6f6;
+    }
+
+    &__content {
+        display: flex;
+        align-content: center;
+        justify-content: flex-end;
+        gap: 8px;
+        border-top: 1px solid #e2e2e3;
+        padding: 16px 0;
+        background-color: #f6f6f6;
+
+        .button {
+            &:first-child {
+                margin-right: auto;
+            }
+        }
+    }
+}

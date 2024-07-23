@@ -1,0 +1,87 @@
+@import '../../assets/css/utils/index.scss';
+
+.head-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: auto;
+
+    @include is-screen-max($breakpoint-lg) {
+        grid-column: span 2;
+    }
+
+    @include is-screen-max($breakpoint-md) {
+        grid-column: span 1;
+        margin-top: 6px;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        position: absolute;
+        right: 0;
+        top: 18px;
+        margin-top: 0;
+    }
+
+    @include is-screen-max($breakpoint-xs) {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__icon-buttons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        @include is-screen-max($breakpoint-xs) {
+            margin-top: -20px;
+
+            & + .button {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+        .button {
+            border-radius: 50% !important;
+
+            @include is-screen-max($breakpoint-md) {
+                width: 44px;
+                height: 44px;
+            }
+
+            @include is-screen-max($breakpoint-xs) {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .button {
+        flex-shrink: 0;
+
+        &__title {
+            @include is-screen-max($breakpoint-md) {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        &.is-active {
+            border-color: #e2e2e3;
+            background-color: transparent;
+
+            &:hover {
+                background-color: rgba(27, 28, 29, 0.1);
+            }
+
+            .button {
+                &__title {
+                    color: #1b1c1d;
+                }
+            }
+        }
+    }
+}

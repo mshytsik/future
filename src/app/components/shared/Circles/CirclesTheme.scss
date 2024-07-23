@@ -1,0 +1,13 @@
+.body.is-dark-mode {
+    .circles {
+        &__item {
+            p {
+                color: #e2e2e3;
+            }
+
+            &--more {
+                background-color: #8c9095;
+            }
+        }
+    }
+}

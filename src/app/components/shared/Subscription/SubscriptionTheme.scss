@@ -1,0 +1,40 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .subscription {
+        &__user {
+            .user {
+                &__title {
+                    p {
+                        color: #e2e2e3;
+                    }
+                }
+            }
+        }
+
+        &__button {
+            &.is-active {
+                background-color: #e2e2e3;
+
+                .button {
+                    &__title {
+                        color: #2f3033;
+                    }
+                }
+
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        border-color: #3f444a !important;
+                        background-color: #3f444a;
+
+                        .button {
+                            &__title {
+                                color: #e2e2e3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

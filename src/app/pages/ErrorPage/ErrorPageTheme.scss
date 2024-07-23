@@ -1,0 +1,11 @@
+.body.is-dark-mode {
+    .page-404 {
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__subtitle {
+            color: #e2e2e3;
+        }
+    }
+}

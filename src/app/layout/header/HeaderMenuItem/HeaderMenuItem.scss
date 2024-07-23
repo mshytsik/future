@@ -1,0 +1,94 @@
+@import '../../../assets/css/utils/index.scss';
+
+.menu-item {
+    position: relative;
+
+    .button {
+        @include is-screen-max($breakpoint-md) {
+            justify-content: flex-start;
+            gap: 16px;
+            width: 100%;
+            height: auto;
+            padding: 8px 16px;
+            border-radius: 0;
+        }
+
+        svg {
+            @include is-screen-max($breakpoint-md) {
+                width: 24px;
+
+                path {
+                    fill: #1B1C1D;
+                }
+            }
+        }
+
+        &__title {
+            position: absolute;
+            left: calc(100% + 20px);
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 4px 8px;
+            border-radius: 6px;
+            background-color: #232628;
+            opacity: 0;
+            pointer-events: none;
+            font-size: 14px;
+            line-height: 20px;
+            color: rgba(255, 255, 255, 0.90);
+            white-space: nowrap;
+            transition: opacity 0.3s;
+        
+            @include is-screen-max($breakpoint-md) {
+                position: relative;
+                left: initial;
+                top: initial;
+                transform: none;
+                padding: 0;
+                border-radius: 0;
+                background-color: transparent;
+                opacity: 1;
+                pointer-events: initial;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 24px;
+                color: #1B1C1D;
+            }
+        }
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                .button {
+                    &__title {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &.is-active {
+        .button {
+            svg {
+                path {
+                    fill: #1B1C1D;
+                }
+            }
+        }
+    }
+
+    &--add {
+        margin-top: 25px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 1px;
+            background-color: #E2E2E3;
+        }
+    }
+}

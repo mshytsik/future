@@ -1,0 +1,118 @@
+@import '../../assets/css/utils/index.scss';
+
+.pa-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid #e2e2e3;
+    border-bottom: 1px solid #e2e2e3;
+
+    .pa-meta {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 10px;
+
+            img {
+                width: 24px;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+                color: #70717a;
+            }
+        }
+    }
+
+    .pa-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+
+        &__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: background-color 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(27, 28, 29, 0.1);
+                }
+            }
+
+            img {
+                width: 24px;
+            }
+        }
+    }
+
+    &--conference-head {
+        padding: 18px 0;
+
+        .pa-meta {
+            flex-wrap: wrap;
+            gap: 6px 28px;
+
+            @include is-screen-max($breakpoint-sm) {
+                column-gap: 16px;
+            }
+
+            &__item {
+                position: relative;
+                gap: 4px;
+                padding: 0;
+
+                img {
+                    margin: 2px;
+                }
+
+                p {
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+
+                &:not(:last-child) {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: -16px;
+                        transform: translateY(-50%);
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 50%;
+                        background-color: #d5d6d8;
+
+                        @include is-screen-max($breakpoint-sm) {
+                            right: -12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--disabled {
+        .pa-actions {
+            &__button {
+                cursor: not-allowed;
+            }
+        }
+    }
+}

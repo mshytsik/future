@@ -1,0 +1,23 @@
+.body.is-dark-mode {
+    .editor {
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &-block {
+            .button {
+                &--primary {
+                    &:hover {
+                        background-color: #8c9095;
+
+                        .button {
+                            &__title {
+                                color: #2f3033;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

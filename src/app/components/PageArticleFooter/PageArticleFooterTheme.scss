@@ -1,0 +1,39 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .pa-footer {
+        &__tags {
+            .tag {
+                background-color: #f0f1f1;
+
+                &__title {
+                    color: #1b1c1d;
+                }
+
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        background-color: #303234;
+
+                        .tag {
+                            &__title {
+                                color: #f0f1f1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__links {
+            a {
+                color: #e2e2e3;
+
+                &:not(:last-child) {
+                    &::before {
+                        background-color: #454749;
+                    }
+                }
+            }
+        }
+    }
+}

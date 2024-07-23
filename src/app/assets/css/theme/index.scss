@@ -1,0 +1,12 @@
+.body.is-dark-mode {
+    background-color: #101112;
+    color: #ffffff;
+
+    .is-link {
+        text-decoration-color: #303234;
+
+        &:hover {
+            text-decoration-color: #e2e2e3;
+        }
+    }
+}

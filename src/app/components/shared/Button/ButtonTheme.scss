@@ -1,0 +1,53 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .button {
+        &--primary {
+            border-color: #f0f1f1;
+            background-color: #f0f1f1;
+
+            .button {
+                &__title {
+                    color: #2f3033;
+                }
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: #3f444a;
+                    border-color: #3f444a;
+
+                    .button {
+                        &__title {
+                            color: #e2e2e3;
+                        }
+                    }
+                }
+            }
+        }
+
+        &--secondary {
+            border-color: #303234;
+
+            .button {
+                &__title {
+                    color: #e2e2e3;
+                }
+            }
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: #3f444a;
+                }
+            }
+        }
+
+        &--icon {
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+        }
+    }
+}

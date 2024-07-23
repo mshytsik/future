@@ -1,0 +1,106 @@
+@import '../../assets/css/utils/index.scss';
+
+.support {
+    &__title {
+        margin-bottom: 24px;
+        color: #1b1c1d;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: -0.15px;
+
+        @include is-screen-max($breakpoint-sm) {
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: 0;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px;
+        border: 1px solid #e2e2e3;
+        border-radius: 28px;
+        background-color: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(50px);
+    }
+
+    &__description {
+        width: 500px;
+        max-width: 100%;
+        color: #1b1c1d;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &__row {
+        display: flex;
+        gap: 24px;
+
+        @include is-screen-max($breakpoint-sm) {
+            flex-direction: column;
+        }
+    }
+
+    .support-block {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 200px;
+        max-width: 100%;
+
+        &__title {
+            flex-shrink: 0;
+            font-size: 13px;
+            line-height: 18px;
+            color: #70717a;
+        }
+
+        &__value {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #1b1c1d;
+            word-break: break-word;
+            transition: opacity 0.3s;
+
+            &[href] {
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        opacity: 0.6;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    flex-shrink: 0;
+                    width: 16px;
+                    height: 16px;
+                    background-image: url(../../assets/img/icons/arrow-up-right.svg);
+                    background-size: 16px;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-shrink: 0;
+        gap: 24px;
+
+        a {
+            width: 24px;
+            transition: opacity 0.3s;
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}

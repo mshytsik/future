@@ -1,0 +1,113 @@
+@import '../../../assets/css/utils/index.scss';
+
+.form-input {
+    position: relative;
+
+    &__input {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        padding: 8px 40px 8px 10px;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        background-color: #f0f1f1;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1b1c1d;
+        appearance: none;
+        outline: none;
+        transition:
+            border-color 0.3s,
+            opacity 0.3s;
+
+        &::placeholder {
+            color: #8f9193;
+            transition: color 0.3s;
+        }
+
+        &::-webkit {
+            &-calendar-picker-indicator {
+                display: none;
+            }
+
+            &-datetime-edit {
+                padding: 0;
+
+                &-fields-wrapper {
+                    padding: 0;
+                }
+            }
+
+            &-outer-spin-button,
+            &-inner-spin-button {
+                display: none;
+            }
+        }
+
+        &:focus {
+            border-color: #97c8f5;
+        }
+
+        &.is-error {
+            border-color: #e04748;
+        }
+
+        &.is-disabled {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        &--textarea {
+            resize: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    .input-nav {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        bottom: 4px;
+        display: flex;
+        align-items: flex-start;
+        z-index: 10;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                #f0f1f1 20px,
+                #f0f1f1 100%
+            );
+            z-index: -1;
+        }
+
+        &__content {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 36px;
+        }
+
+        &__warning {
+            align-items: center;
+            margin-right: 4px;
+
+            img {
+                width: 24px;
+            }
+        }
+    }
+}

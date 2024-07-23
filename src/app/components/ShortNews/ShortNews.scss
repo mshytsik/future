@@ -1,0 +1,42 @@
+@import '../../assets/css/utils/index.scss';
+
+.short-news {
+    display: flex;
+    flex-direction: column;
+    max-height: 1200px;
+    overflow: hidden auto;
+
+    @include is-screen-max($breakpoint-lg) {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        max-height: initial;
+        margin: 0 -19px;
+        padding: 0 19px;
+        overflow: auto hidden;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        margin-top: 3px;
+    }
+
+    .short-article {
+        @include is-screen-max($breakpoint-lg) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 360px;
+            height: 100%;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            width: 240px;
+        }
+
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.body.is-dark-mode {
+    .user {
+        &__title {
+            p {
+                color: #e2e2e3;
+            }
+        }
+
+        &__subtitle {
+            color: #8c9095;
+        }
+
+        &__meta {
+            p {
+                color: #8c9095;
+
+                &:not(:last-child) {
+                    &::after {
+                        background-color: #454749;
+                    }
+                }
+            }
+        }
+    }
+}

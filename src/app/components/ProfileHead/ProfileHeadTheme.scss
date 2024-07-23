@@ -1,0 +1,31 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .profile-head {
+        &__title {
+            p {
+                color: #e2e2e3;
+            }
+        }
+
+        &__subtitle {
+            color: #8c9095;
+        }
+
+        &__meta {
+            p {
+                color: #8c9095;
+
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        color: #e2e2e3;
+                    }
+                }
+
+                span {
+                    color: #e2e2e3;
+                }
+            }
+        }
+    }
+}

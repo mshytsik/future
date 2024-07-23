@@ -1,0 +1,40 @@
+@import '../../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .block-link {
+        &__result {
+            background-color: #1a1b1c;
+
+            &:hover {
+                @include is-screen-min($breakpoint-md) {
+                    border-color: #e2e2e3;
+                    box-shadow: 0px 8px 20px 0px rgba(255, 255, 255, 0.2);
+                }
+            }
+
+            .link-result {
+                &__title {
+                    color: #e2e2e3;
+                }
+
+                &__subtitle {
+                    color: #8c9095;
+                }
+
+                &__url {
+                    p {
+                        color: #8c9095;
+                    }
+                }
+            }
+        }
+
+        &__loader {
+            background-color: #1a1b1c;
+        }
+
+        &__form {
+            background-color: #1a1b1c;
+        }
+    }
+}

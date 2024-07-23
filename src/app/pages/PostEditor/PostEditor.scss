@@ -1,0 +1,32 @@
+@import '../../assets/css/utils/index.scss';
+
+.post-editor {
+    @include is-screen-max($breakpoint-lg) {
+        padding-top: 72px;
+    }
+
+    &__content {
+        flex-grow: 1;
+        padding-top: 64px;
+        margin-bottom: calc(64px + 72px);
+
+        @include is-screen-max($breakpoint-md) {
+            padding-top: 32px;
+            margin-bottom: calc(32px + 152px);
+        }
+    }
+
+    &.is-preview-mode {
+        .main-body {
+            &__content {
+                @include is-screen-min($breakpoint-sm) {
+                    padding-top: 64px;
+                }
+            }
+        }
+
+        .pa-header {
+            margin-bottom: 0;
+        }
+    }
+}

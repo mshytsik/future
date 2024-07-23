@@ -1,0 +1,96 @@
+@import '../../../assets/css/utils/index.scss';
+
+.tabs {
+    position: relative;
+    max-width: 100%;
+    border-radius: 12px;
+    background-color: #F0F1F1;
+    overflow: hidden;
+
+    &__arrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        width: 140px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+
+        &.is-visible {
+            opacity: 1;
+        }
+
+        img {
+            width: 24px;
+        }
+
+        &--left {
+            left: 0;
+            justify-content: flex-start;
+            background: linear-gradient(
+                90deg,
+                #f6f6f6 19.15%,
+                rgba(246, 246, 246, 0) 100%
+            );
+
+            img {
+                transform: rotate(90deg);
+            }
+        }
+
+        &--right {
+            right: 0;
+            justify-content: flex-end;
+            background: linear-gradient(
+                270deg,
+                #f6f6f6 19.15%,
+                rgba(246, 246, 246, 0) 100%
+            );
+
+            img {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &__track {
+        display: flex;
+        gap: 4px;
+        padding: 4px;
+        overflow: auto hidden;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        flex-shrink: 0;
+        gap: 6px;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1B1C1D;
+        transition: background-color 0.3s, color 0.3s;
+        cursor: pointer;
+
+        span {
+            color: #70717A;
+            transition: color 0.3s;
+        }
+
+        &:hover {
+            background-color: rgba(27, 28, 29, 0.10);
+        }
+
+        &.is-active {
+            background-color: #232628;
+            color: rgba(255, 255, 255, 0.90);
+
+            span {
+                color: #8E8F99;
+            }
+        }
+    }
+}

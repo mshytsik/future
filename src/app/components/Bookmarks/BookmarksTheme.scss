@@ -1,0 +1,11 @@
+.body.is-dark-mode {
+    .bookmarks {
+        &:not(:last-child) {
+            border-color: #303234;
+        }
+
+        &__title {
+            color: #e2e2e3;
+        }
+    }
+}

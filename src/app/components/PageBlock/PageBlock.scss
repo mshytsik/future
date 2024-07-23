@@ -1,0 +1,50 @@
+@import '../../assets/css/utils/index.scss';
+
+.page-block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 23px;
+    border: 1px solid #E2E2E3;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    backdrop-filter: blur(20px);
+
+    @include is-screen-max($breakpoint-xl) {
+        gap: 16px;
+        padding: 19px;
+    }
+
+    @include is-screen-max($breakpoint-lg) {
+        gap: 20px;
+    }
+
+    @include is-screen-max($breakpoint-sm) {
+        gap: 17px;
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 21px;
+        line-height: 28px;
+        color: #70717A;
+
+        @include is-screen-max($breakpoint-xl) {
+            font-size: 18px;
+            line-height: 24px;
+            color: #898993;
+        }
+    
+        @include is-screen-max($breakpoint-lg) {
+            font-size: 21px;
+            line-height: 28px;
+            color: #8C9095;
+        }
+    }
+}

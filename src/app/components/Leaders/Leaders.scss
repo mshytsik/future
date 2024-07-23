@@ -1,0 +1,25 @@
+@import '../../assets/css/utils/index.scss';
+
+.leaders {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include is-screen-min-max($breakpoint-sm, $breakpoint-lg) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px 16px;
+        margin: 0 -19px;
+        padding: 0 19px;
+        overflow: auto hidden;
+
+        .leader {
+            flex-grow: 0;
+            min-width: 280px;
+
+            &:nth-child(10) {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+@import '../../assets/css/utils/index.scss';
+
+.pe-head {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    grid-column: span 2;
+    padding-bottom: 24px;
+    background-color: #FFFFFF;
+    transition: transform 0.3s;
+
+    @include is-screen-max($breakpoint-sm) {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 28px 24px;
+        z-index: 150;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -24px;
+        width: 1px;
+        background-color: #E2E2E3;
+
+        @include is-screen-max($breakpoint-md) {
+            right: -16px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            display: none;
+        }
+    }
+
+    &__content {
+        position: sticky;
+        top: 0;
+        padding: 32px 0;
+        background-color: #FFFFFF;
+
+        @include is-screen-max($breakpoint-sm) {
+            position: relative;
+            padding-top: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 22px;
+        font-size: 13px;
+        line-height: 18px;
+        color: #8F9193;
+
+        @include is-screen-max($breakpoint-sm) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+
+        @include is-screen-max($breakpoint-sm) {
+            gap: 4px;
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 8px 10px 12px;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            color: #70717A;
+            transition: color 0.3s;
+        }
+
+        img {
+            display: none;
+            width: 20px;
+
+            @include is-screen-max($breakpoint-sm) {
+                display: block;
+            }
+        }
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                background-color: rgba(27, 28, 29, 0.06);
+
+                p {
+                    font-weight: 600;
+                    color: #1B1C1D;
+                }
+            }
+        }
+    }
+
+    .pe-banner {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #F0F1F1;
+        cursor: pointer;
+
+        @include is-screen-max($breakpoint-sm) {
+            display: none;
+        }
+
+        &__icon {
+            width: 48px;
+        }
+
+        &__title {
+            font-size: 16px;
+            line-height: 24px;
+            color: #1B1C1D;
+        }
+
+        &__subtitle {
+            margin-top: -10px;
+            font-size: 13px;
+            line-height: 18px;
+            color: #70717A;
+        }
+    }
+
+    &.is-hidden {
+        @include is-screen-max($breakpoint-sm) {
+            transform: translateX(-100%);
+        }
+    }
+}

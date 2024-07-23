@@ -1,0 +1,24 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .article--conf {
+        &-no-speakers {
+            .article {
+                &__footer {
+                    .article-nav {
+                        @include is-screen-max($breakpoint-sm) {
+                            &.is-hidden {
+                                .article-nav {
+                                    &__body {
+                                        border-color: #303234;
+                                        background-color: #1a1b1c;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

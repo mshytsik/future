@@ -1,0 +1,15 @@
+.body.is-dark-mode {
+    .login-area {
+        &__button {
+            &:last-child {
+                &::before {
+                    background-color: #303234;
+                }
+            }
+        }
+
+        &__note {
+            color: #8c9095;
+        }
+    }
+}

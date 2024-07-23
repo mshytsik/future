@@ -1,0 +1,9 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .speaker-topics {
+        li {
+            color: #e2e2e3;
+        }
+    }
+}

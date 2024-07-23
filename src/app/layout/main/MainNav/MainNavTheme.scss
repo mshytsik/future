@@ -1,0 +1,82 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .main-nav {
+        border-bottom-color: #303234;
+        background-color: rgba(27, 28, 29, 1);
+
+        &__track {
+            .tag:nth-last-child(1 of .tag:not(.tag--hash)) {
+                &::before {
+                    background-color: #303234;
+                }
+            }
+        }
+
+        &__menu {
+            &::before {
+                background: linear-gradient(
+                    90deg,
+                    rgba(27, 28, 29, 0) 0%,
+                    rgba(27, 28, 29, 1) 40px,
+                    rgba(27, 28, 29, 1) 100%
+                );
+            }
+
+            &::after {
+                background-color: rgba(27, 28, 29, 1);
+            }
+        }
+
+        &__item {
+            &--toggle {
+                p {
+                    color: #8c9095;
+
+                    &.is-inactive {
+                        background: linear-gradient(
+                            90deg,
+                            rgba(27, 28, 29, 0) 0%,
+                            rgba(27, 28, 29, 1) 25px,
+                            rgba(27, 28, 29, 1) 100%
+                        );
+                    }
+                }
+            }
+
+            &--button {
+                &::before {
+                    background-color: #303234;
+                }
+
+                p {
+                    color: #8c9095;
+                }
+            }
+        }
+
+        &.is-enter-done {
+            .main-nav {
+                &__track {
+                    @include is-screen-max($breakpoint-md) {
+                        border-color: #303234;
+                    }
+                }
+
+                &__menu {
+                    @include is-screen-max($breakpoint-md) {
+                        border-color: #303234;
+                    }
+                }
+
+                &__item {
+                    &--button {
+                        @include is-screen-max($breakpoint-md) {
+                            border-color: #303234;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

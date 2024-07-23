@@ -1,0 +1,39 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .short-article {
+        &::before {
+            background-color: #303234;
+        }
+
+        &::after {
+            background-color: #303234;
+        }
+
+        &__body {
+            color: #e2e2e3;
+
+            &::before {
+                color: #8c9095;
+
+                @include is-screen-max($breakpoint-lg) {
+                    background-color: #1a1b1c;
+                }
+            }
+        }
+
+        &__meta {
+            & > p {
+                color: #8c9095;
+            }
+        }
+
+        &__photo {
+            &:not(:first-child) {
+                &::before {
+                    background-color: #1a1b1c;
+                }
+            }
+        }
+    }
+}

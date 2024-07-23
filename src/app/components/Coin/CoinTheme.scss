@@ -1,0 +1,24 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .coin {
+        border-color: #303234;
+        background-color: #1a1b1c;
+
+        &:hover {
+            @include is-screen-min($breakpoint-md) {
+                background-color: #303234;
+            }
+        }
+
+        &__name {
+            color: #e2e2e3;
+        }
+
+        &__body {
+            p {
+                color: #e2e2e3;
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@import '../../assets/css/utils/index.scss';
+
+.coin {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    gap: 8px;
+    padding: 7px;
+    border: 1px solid #E2E2E3;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    backdrop-filter: blur(20px);
+    transition: background-color 0.3s;
+    // cursor: pointer;
+
+    &:hover {
+        @include is-screen-min($breakpoint-md) {
+            background-color: #F0F1F1;
+        }
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 4px;
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #1B1C1D;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: -0.25px;
+            color: #1B1C1D;
+            text-align: right;
+        }
+    }
+}

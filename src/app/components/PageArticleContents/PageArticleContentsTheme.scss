@@ -1,0 +1,16 @@
+.body.is-dark-mode {
+    .pa-contents {
+        border-color: #303234;
+        background-color: #232425;
+
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__list {
+            a {
+                color: #e2e2e3;
+            }
+        }
+    }
+}

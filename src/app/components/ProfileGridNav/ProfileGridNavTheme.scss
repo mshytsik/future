@@ -1,0 +1,33 @@
+.body.is-dark-mode {
+    .grid-head {
+        &__nav {
+            &-item {
+                &:not(:first-child) {
+                    &::before {
+                        background-color: #303234;
+                    }
+                }
+
+                &--button {
+                    &:hover {
+                        border-color: transparent;
+                        background-color: #8c9095;
+
+                        .button {
+                            &__title {
+                                color: #2f3033;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .grid-filter {
+                &__popup {
+                    border-color: #303234;
+                    background-color: #1a1b1c;
+                }
+            }
+        }
+    }
+}

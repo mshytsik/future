@@ -1,0 +1,44 @@
+@import '../../assets/css/utils/index.scss';
+
+.profile-grid {
+    margin-top: 28px;
+
+    @include is-screen-max($breakpoint-lg) {
+        margin-top: 20px;
+    }
+
+    .grid-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        margin: 0 32px 28px;
+
+        @include is-screen-max($breakpoint-xl) {
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+
+        @include is-screen-max($breakpoint-lg) {
+            margin: 0 16px 20px;
+        }
+
+        @include is-screen-max($breakpoint-sm) {
+            flex-wrap: wrap;
+        }
+    }
+    
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        
+        @include is-screen-max($breakpoint-xl) {
+            gap: 20px;
+        }
+
+        @include is-screen-max($breakpoint-lg) {
+            gap: 16px;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+@import '../../../../assets/css/utils/index.scss';
+
+#root[data-theme='dark'] {
+    & ~ .tox {
+        .tox-pop {
+            &__dialog {
+                background-color: #1a1b1c !important;
+                border-color: #303234 !important;
+
+                .tox-toolbar {
+                    &__group {
+                        &:not(:last-of-type) {
+                            border-color: #303234 !important;
+                        }
+                    }
+
+                    .tox-tbtn {
+                        background-color: transparent !important;
+                        color: #e2e2e3 !important;
+
+                        svg {
+                            path {
+                                fill: #e2e2e3;
+                            }
+                        }
+
+                        &--enabled {
+                            background-color: rgba(
+                                255,
+                                255,
+                                255,
+                                0.1
+                            ) !important;
+                        }
+
+                        &:hover {
+                            @include is-screen-min($breakpoint-md) {
+                                background-color: rgba(
+                                    255,
+                                    255,
+                                    255,
+                                    0.06
+                                ) !important;
+
+                                svg {
+                                    path {
+                                        fill: #4e55f4;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &-textfield {
+                        background-color: #262729;
+                        color: #e2e2e3;
+                    }
+                }
+            }
+        }
+    }
+}

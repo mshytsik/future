@@ -1,0 +1,25 @@
+@import '../../../../assets/css/utils/index.scss';
+
+.block-video {
+    &__result {
+        position: relative;
+        padding-bottom: calc(9 / 16 * 100%);
+        border-radius: 12px;
+        background-color: #f0f1f1;
+        overflow: hidden;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__form {
+        padding: 28px;
+        border-radius: 16px;
+        background-color: #ffffff;
+    }
+}

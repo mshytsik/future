@@ -1,0 +1,27 @@
+.body.is-dark-mode {
+    .support {
+        &__title {
+            color: #e2e2e3;
+        }
+
+        &__body {
+            border-color: #303234;
+            background-color: rgba(27, 28, 29, 0.88);
+        }
+
+        &__description {
+            width: 500px;
+            color: #e2e2e3;
+        }
+
+        .support-block {
+            &__title {
+                color: #8c9095;
+            }
+
+            &__value {
+                color: #e2e2e3;
+            }
+        }
+    }
+}

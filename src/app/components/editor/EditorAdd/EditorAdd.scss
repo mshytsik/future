@@ -1,0 +1,94 @@
+@import '../../../assets/css/utils/index.scss';
+
+.editor-add {
+    position: relative;
+    align-self: flex-start;
+
+    @include is-screen-max($breakpoint-lg) {
+        padding-left: 36px;
+    }
+
+    &__button {
+        position: relative;
+        padding: 2px 0;
+        cursor: pointer;
+    }
+
+    &__input {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: -0.1px;
+        color: #8f9193;
+        transition: color 0.3s;
+        cursor: pointer;
+
+        @include is-screen-max($breakpoint-sm) {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0;
+        }
+
+        &.is-active {
+            color: #1b1c1d;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-100%, -50%);
+        display: flex;
+        align-items: center;
+        padding-right: 8px;
+
+        img {
+            width: 24px;
+        }
+    }
+
+    &__dropdown {
+        top: 100%;
+        left: -8px;
+        z-index: 15;
+
+        &.is-mobile {
+            position: fixed;
+            left: 80px;
+            top: initial;
+            bottom: 0;
+            flex-direction: row;
+            width: auto;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            overflow: auto hidden;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .dropdown {
+                &__item {
+                    flex-shrink: 0;
+
+                    p {
+                        display: none;
+                    }
+                }
+            }
+
+            &.is-active {
+                z-index: 300;
+            }
+
+            @include is-screen-max($breakpoint-xl) {
+                left: 68px;
+            }
+
+            @include is-screen-max($breakpoint-md) {
+                left: 0;
+            }
+        }
+    }
+}

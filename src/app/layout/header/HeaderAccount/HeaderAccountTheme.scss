@@ -1,0 +1,51 @@
+@import '../../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .header-account {
+        .account-menu {
+            border-color: #303234;
+            background-color: #1a1b1c;
+            box-shadow: 0px 12px 48px 0px rgba(0, 0, 0, 0.24);
+
+            @include is-screen-max($breakpoint-md) {
+                &::before {
+                    background-color: #303234;
+                }
+            }
+
+            &__header {
+                border-color: #303234;
+            }
+
+            &__body {
+                border-color: #303234;
+
+                @include is-screen-max($breakpoint-md) {
+                    &::before {
+                        background-color: #303234;
+                    }
+                }
+            }
+
+            &__item {
+                color: #e2e2e3;
+
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        background-color: rgba(255, 255, 255, 0.06);
+                    }
+                }
+            }
+
+            &__socials {
+                border-color: #303234;
+
+                @include is-screen-max($breakpoint-md) {
+                    &::before {
+                        background-color: #303234;
+                    }
+                }
+            }
+        }
+    }
+}

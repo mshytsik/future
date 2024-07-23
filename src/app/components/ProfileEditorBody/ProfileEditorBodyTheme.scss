@@ -1,0 +1,22 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .pe-body {
+        .pe-form {
+            &__title {
+                @include is-screen-max($breakpoint-sm) {
+                    background-color: #1a1b1c;
+                }
+
+                p {
+                    color: #e2e2e3;
+                }
+            }
+        }
+
+        .pe-footer {
+            border-color: #303234;
+            background-color: #1a1b1c;
+        }
+    }
+}

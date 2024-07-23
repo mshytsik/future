@@ -1,0 +1,11 @@
+.body.is-dark-mode {
+    .toggle {
+        &__label {
+            color: #e2e2e3;
+        }
+
+        &__input {
+            background-color: #4f5255;
+        }
+    }
+}

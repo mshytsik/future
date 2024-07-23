@@ -1,0 +1,17 @@
+.body.is-dark-mode {
+    .profile-block {
+        &__title {
+            color: #8c9095;
+        }
+
+        &__value {
+            color: #e2e2e3;
+
+            & > a {
+                &::after {
+                    background-image: url(../../assets/img/icons/theme/arrow-up-right.svg);
+                }
+            }
+        }
+    }
+}

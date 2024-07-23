@@ -1,0 +1,125 @@
+@import '../../../assets/css/utils/index.scss';
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__title {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 64px;
+        letter-spacing: -0.4px;
+        color: #1b1c1d;
+        resize: none;
+        outline: none;
+        appearance: none;
+        transition: color 0.3s;
+
+        @include is-screen-max($breakpoint-sm) {
+            font-size: 36px;
+            line-height: 40px;
+        }
+
+        &.is-error {
+            &::placeholder {
+                color: #e04748 !important;
+            }
+        }
+
+        &::placeholder {
+            color: #8f9193;
+            transition: color 0.3s;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__track {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .editor-block {
+            position: relative;
+            display: flex;
+            gap: 8px;
+            transition: opacity 0.3s;
+
+            &.sortable-ghost {
+                opacity: 0;
+            }
+
+            &__nav {
+                display: flex;
+                flex-shrink: 0;
+
+                @include is-screen-max($breakpoint-sm) {
+                    flex-direction: column;
+                }
+            }
+
+            &__drag {
+                cursor: grab;
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            &__content {
+                position: relative;
+                width: 100%;
+                min-width: 0;
+            }
+
+            &--text {
+                .editor-block {
+                    &__nav {
+                        padding: 4px 0;
+
+                        @include is-screen-max($breakpoint-sm) {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+            &__form {
+                width: 100%;
+            }
+        }
+    }
+
+    &.is-edit-mode {
+        &:not(.is-preview) {
+            .editor {
+                &__track {
+                    width: calc(100% + 64px);
+                    margin-left: -64px;
+
+                    @include is-screen-max($breakpoint-lg) {
+                        width: 100%;
+                        margin-left: 0;
+                    }
+
+                    .block-heading {
+                        &__result {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

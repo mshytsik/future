@@ -1,0 +1,55 @@
+@import '../../../assets/css/utils/index.scss';
+
+.search-popup {
+    .popup {
+        &__content {
+            width: 770px;
+        }
+
+        &__head {
+            padding-bottom: 16px;
+        }
+
+        &__title {
+            @include is-screen-max($breakpoint-sm) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+
+        &__body {
+            .tags-list {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                &__title {
+                    flex-shrink: 0;
+                    font-size: 13px;
+                    line-height: 28px;
+                    color: #70717a;
+                }
+
+                .tag {
+                    padding: 5px 10px 5px 8px;
+                    border-width: 0;
+
+                    &:not(:hover) {
+                        background-color: rgba(27, 28, 29, 0.06);
+                    }
+
+                    &__icon {
+                        width: 16px;
+                        height: 16px;
+                    }
+
+                    &__title {
+                        font-size: 13px;
+                        line-height: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

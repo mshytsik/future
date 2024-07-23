@@ -1,0 +1,14 @@
+@import '../../assets/css/utils/index.scss';
+
+.body.is-dark-mode {
+    .editor-footer {
+        @include is-screen-max($breakpoint-md) {
+            background-color: #101112;
+        }
+
+        &__content {
+            border-color: #303234;
+            background-color: #101112;
+        }
+    }
+}

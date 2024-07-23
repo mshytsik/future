@@ -1,0 +1,44 @@
+.body.is-dark-mode {
+    .tabs {
+        background-color: #262729;
+
+        &__arrow {
+            &--left {
+                background: linear-gradient(
+                    90deg,
+                    #101112 19.15%,
+                    rgba(16, 17, 18, 0) 100%
+                );
+            }
+
+            &--right {
+                background: linear-gradient(
+                    270deg,
+                    #101112 19.15%,
+                    rgba(16, 17, 18, 0) 100%
+                );
+            }
+        }
+
+        &__item {
+            color: #e2e2e3;
+
+            span {
+                color: #8c9095;
+            }
+
+            &:hover {
+                background-color: #3f444a;
+            }
+
+            &.is-active {
+                background-color: #f0f1f1;
+                color: #2f3033;
+
+                span {
+                    color: #75777a;
+                }
+            }
+        }
+    }
+}

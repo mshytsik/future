@@ -1,0 +1,49 @@
+@import '../../assets/css/utils/index.scss';
+
+.editor-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__cover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        background-color: #f0f1f1;
+        background-position: center;
+        background-size: cover;
+
+        .button {
+            background-color: #e2e2e3;
+        }
+    }
+
+    &__title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #1b1c1d;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+
+    &__description {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #70717a;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+    }
+}

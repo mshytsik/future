@@ -1,0 +1,12 @@
+.body.is-dark-mode {
+    .block-code {
+        &__result {
+            background-color: #1a1b1c;
+            color: #8c9095;
+        }
+
+        &__form {
+            background-color: #1a1b1c;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import '../../../../assets/css/utils/index.scss';
+
+.block-heading {
+    &__result {
+        font-weight: 600;
+        color: #1b1c1d;
+        word-break: break-word;
+    }
+
+    &--h2 {
+        .block-heading {
+            &__result {
+                padding-top: 24px;
+                font-size: 36px;
+                line-height: 48px;
+                letter-spacing: -0.25px;
+
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+
+    &--h3 {
+        .block-heading {
+            &__result {
+                padding-top: 16px;
+                font-size: 28px;
+                line-height: 36px;
+                letter-spacing: -0.15px;
+
+                @include is-screen-max($breakpoint-sm) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+
+    &--h4 {
+        .block-heading {
+            &__result {
+                padding-top: 16px;
+                font-size: 24px;
+                line-height: 32px;
+                letter-spacing: -0.1px;
+            }
+        }
+    }
+
+    &__form {
+        padding: 28px;
+        border-radius: 16px;
+        background-color: #ffffff;
+    }
+}

@@ -1,0 +1,3 @@
+export const WINDOW_MOBILE_WIDTH = 800;
+
+export const ONE_MEGABYTE_SIZE = 1048576;

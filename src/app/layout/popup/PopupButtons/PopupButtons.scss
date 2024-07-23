@@ -1,0 +1,85 @@
+@import '../../../assets/css/utils/index.scss';
+
+.popup-buttons {
+    .popup {
+        &__content {
+            width: auto;
+            overflow: visible;
+            
+            @include is-screen-max($breakpoint-sm) {
+                border-radius: 40px;
+            }
+        }
+
+        &__body {
+            display: flex;
+            gap: 16px;
+            padding-top: 24px;
+
+            @include is-screen-max($breakpoint-sm) {
+                flex-direction: column;
+            }
+
+            .button {
+                flex-direction: column;
+                gap: 8px;
+                width: 280px;
+                height: 200px;
+                max-width: 100%;
+                border-radius: 16px;
+                background-color: #F0F1F1;
+
+                @include is-screen-max($breakpoint-sm) {
+                    height: 150px;
+                }
+
+                img,
+                svg {
+                    width: 40px;
+                    transition: width 0.3s;
+                }
+
+                &__title {
+                    color: #1B1C1D;
+                }
+
+                &:hover {
+                    @include is-screen-min($breakpoint-md) {
+                        img,
+                        svg {
+                            width: 48px;
+                        }
+                    }
+                }
+
+                &:nth-child(1) {
+                    &:hover {
+                        @include is-screen-min($breakpoint-md) {
+                            background-color: #CEEECF;
+
+                            svg {
+                                path {
+                                    fill: #52C357;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    &:hover {
+                        @include is-screen-min($breakpoint-md) {
+                            background-color: #EEDDCE;
+
+                            svg {
+                                path {
+                                    fill: #D6903D;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

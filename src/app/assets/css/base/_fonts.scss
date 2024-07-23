@@ -1,0 +1,36 @@
+$types: 'ExtraLight' 200, 'Light' 300, 'Regular' 400, 'Medium' 500, 'SemiBold' 600, 'Bold' 700, 'ExtraBold' 800;
+@each $type, $weight in $types {
+    @font-face {
+        font-family: 'Manrope';
+        src: url('../../fonts/Manrope/Manrope-#{$type}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: normal;
+    }
+}
+
+$types: 'Thin' 200, 'ExtraLight' 200, 'Light' 300, 'Regular' 400, 'Medium' 500, 'SemiBold' 600, 'Bold' 700, 'ExtraBold' 800, 'Black' 900;
+@each $type, $weight in $types {
+    @font-face {
+        font-family: 'Inter';
+        src: url('../../fonts/Inter/Inter-#{$type}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: normal;
+    }
+}
+
+$types: 'Regular' 400, 'Bold' 700;
+@each $type, $weight in $types {
+    @font-face {
+        font-family: 'Ubuntu Mono';
+        src: url('../../fonts/UbuntuMono/UbuntuMono-#{$type}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Ubuntu Mono';
+        src: url('../../fonts/UbuntuMono/UbuntuMono-#{$type}Italic.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: italic;
+    }
+}

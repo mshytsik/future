@@ -1,0 +1,82 @@
+@import '../../assets/css/utils/index.scss';
+
+.conference-editor {
+    @include is-screen-max($breakpoint-lg) {
+        padding-top: 72px;
+    }
+
+    .main-body {
+        & > .row {
+            grid-template-rows: 1fr;
+            row-gap: 0;
+        }
+    }
+
+    &__content {
+        flex-grow: 1;
+        margin-top: 64px;
+        margin-bottom: 105px;
+
+        @include is-screen-max($breakpoint-lg) {
+            margin-top: 16px;
+        }
+
+        @include is-screen-max($breakpoint-md) {
+            margin-top: 32px;
+            margin-bottom: 184px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 48px;
+        letter-spacing: -0.25px;
+        color: #1b1c1d;
+
+        @include is-screen-max($breakpoint-sm) {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+            letter-spacing: 0;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 48px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #70717a;
+
+        @include is-screen-max($breakpoint-sm) {
+            margin-bottom: 24px;
+        }
+    }
+
+    .editor {
+        padding-top: 16px;
+
+        @include is-screen-max($breakpoint-sm) {
+            padding-top: 8px;
+        }
+    }
+
+    &.is-preview-mode {
+        .conference-editor {
+            &__content {
+                @include is-screen-min($breakpoint-sm) {
+                    margin-top: 64px;
+                }
+            }
+        }
+
+        .pa-header {
+            margin-bottom: 0;
+        }
+
+        .editor {
+            padding-top: 0;
+        }
+    }
+}
